@@ -3,7 +3,60 @@ var stage = 0;
 var current = 0; //0:question, 1:answer
 var transitionFadeOut =3000;
 var response = 2000;
-var scenarios = [{
+
+var scenarios = [
+    {
+        "id":0,
+        "stages": [{
+            "order":0,
+            "text":"Hi!你喺邊度做呀？",
+            "type":0,
+            "answers":[{
+                "choice_text": "街",
+                "next":1
+            },{
+                "choice_text": "K",
+                "next":1       
+            },{
+                "choice_text": "桑拿",
+                "next":1      
+            },{
+                "choice_text": "一樓一",
+                "next":1      
+            },{
+                "choice_text": "足浴",
+                "next":1      
+            },{
+                "choice_text": "ptgf",
+                "next":1      
+            }]
+    
+         },
+         {
+            "order":1,
+            "text":"有咩玩?",
+            "type":2,
+            "answers":[{
+                "choice_text": "食飯行街",
+                "next_scenario":1
+            },{
+                "choice_text": "ML",
+                "next_scenario":2       
+            },{
+                "choice_text": "DUP",
+                "next_scenario":3      
+            },{
+                "choice_text": "猜枚劈酒唱K",
+                "next_scenario":4      
+            },]
+    
+         },
+    
+          
+    
+        ]
+    },
+    {
     "id":1,
     "stages":[
         {
@@ -46,13 +99,13 @@ var scenarios = [{
             "type":0,//0:conversation, 1:transition
             "answers":[{
                 "choice_text": "嗯...好啦！",
-                "next":99
+                "next":5
             },{
                 "choice_text": "唔戴唔得喎！",
-                "next":99      
+                "next":6      
             },{
                 "choice_text": "笑而不語",
-                "next":99     
+                "next":7     
             }]
     
         },         
@@ -62,13 +115,118 @@ var scenarios = [{
             "type":0,//0:conversation, 1:transition
             "answers":[{
                 "choice_text": "好喎!",
-                "next":99
+                "next":10
             },{
                 "choice_text": "唔喇，我都係想早啲返屋企！",
-                "next":99      
+                "next":9     
             }]
     
         },    
+        {
+            "order":5,
+            "text":"過一段時間後唔舒服",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-03.jpg",
+            "link": "https://hk.yahoo.com",
+            "fadeInMsg":"知多d！<br/>健康d！"
+    
+        },
+        {
+            "order":6,
+            "text":"加$?",
+            "type":0,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "嗯...一次咁多啦！",
+                "next":5
+            },{
+                "choice_text": "加錢都唔得！",
+                "next":8
+            }]
+    
+        },
+        {
+            "order":7,
+            "text":"以為佢同意，過一段時間後唔舒服",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-03.jpg",
+            "link": "https://hk.yahoo.com",
+            "fadeInMsg":"知多d！<br/>健康d！"
+    
+        },
+        {
+            "order":8,
+            "text":"知多d!<br/>遇到咁嘅情況唔知點算好？<br/>可以學下佢點回應",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-03.jpg",
+            "popupImage":[1]
+    
+        },
+        {
+            "order":9,
+            "text":"扮咩上菜，都係想加錢啫，我加多$1000去開房",
+            "type":0,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "嗯...一次咁多啦！",
+                "next":2
+            },{
+                "choice_text": "講咩啊你，加錢唔係大晒㗎！",
+                "next":11
+            }]
+    
+        },
+        {
+            "order":10,
+            "text":"Bar内, 數杯後微醉...<br/>你決定",
+            "type":2,//0:conversation, 1:transition , 2: popup action
+            "background":"bg-01.jpg",
+            "answers":[{
+                "choice_text": "繼續飲",
+                "next":12
+            },{
+                "choice_text": "離開",
+                "next":13
+            }]
+    
+        },
+        {
+            "order":11,
+            "text":"不歡而散，完",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-01.jpg",
+            "popupImage":[3,19,20]
+    
+        },
+        {
+            "order":12,
+            "text":"房...",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":14,// for transition only, -1 means last screen
+            "background":"bg-02.jpg"
+    
+        },
+        {
+            "order":13,
+            "text":"記住任何時間都要保持清醒啊！",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-01.jpg",
+            "popupImage":[2]
+    
+        },
+        {
+            "order":14,
+            "text":"第二朝，不省人事<br/>斷晒片，唔記得發生咩事<br/>發現袋内嘅銀包電話俾人偷咗而且個客已經走咗<br/>知多啲！<br/>可以點樣保護自己？",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-02.jpg",
+            "popupImage":[2]
+    
+        }
+
 
     ]
 }]
@@ -76,39 +234,109 @@ var scenarios = [{
 $(function(){
     $("#start_btn").click(function(){
         $("#start_screen").hide();
-        updateScenario(scenarios[scenario].stages[stage]);
+        //showIntro();
+        //updateScenario(scenarios[scenario].stages[stage]);
+        updateScenario(0,0);
     })
   
 
 })
 
-function updateScenario(stage){
-    if(stage.type){//transition
-        $("#transition").css("background-image","url('src/assets/"+stage.background+"')");
-        $("#transition_text").html(stage.text)
-        $("#transition").css("display","flex");
-        stage = stage.transition_next;
-        setTimeout(function(){
-            $("#game_conversation").html("");
-            $("#game_conversation_choices").html("");
-            updateScenario(scenarios[scenario].stages[stage]);
-            $("#transition").fadeOut();
-        },transitionFadeOut)
-    }else{
-        console.log("conversation");
-        $("#game_conversation").append("<div class='question'>"+stage.text+"</div>");
-        for(var i=0;i<stage.answers.length;i++){
-            $("#game_conversation_choices").append("<div class='choices' data-next="+stage.answers[i].next+">"+stage.answers[i].choice_text+"</div>");
-        }
-        $(".choices").click(function(){
-            $("#game_conversation").append("<div class='answer'>"+$(this).text()+"</div>");
-            var next = $(this).data("next");
+function updateScenario(scenario,stage){
+    //common
+    console.log("updateScenraio:"+scenario+","+stage);
+    stageObj = scenarios[scenario].stages[stage];
+    $("#game_conversation_choices").html("");
+    switch (stageObj.type) {
+        case 0:
+            console.log("conversation");
             setTimeout(function(){
-                updateScenario(scenarios[scenario].stages[next]);
-            },response)
-
-        })
+                $("#transition").removeClass("fadedIn");
+                setTimeout(function(){
+                    $("#transition").hide();
+                },500)
+                $("#game_conversation").append("<div class='question'>"+stageObj.text+"</div>");
+                for(var i=0;i<stageObj.answers.length;i++){
+                    if(stageObj.answers[i].next){//general
+                        $("#game_conversation_choices").append("<div class='choices' data-next="+stageObj.answers[i].next+">"+stageObj.answers[i].choice_text+"</div>");
+                    }else if(stageObj.answers[i].next_scenario){//intro
+                        $("#game_conversation_choices").append("<div class='choices' data-next_scenario="+stageObj.answers[i].next_scenario+">"+stageObj.answers[i].choice_text+"</div>");
+                    }
         
+                }
+                $(".choices").click(function(){
+                    $("#game_conversation").append("<div class='answer'>"+$(this).text()+"</div>");
+                    var next = $(this).data("next");
+                    var next_scenario = $(this).data("next_scenario");
+                    setTimeout(function(){
+                        if(next){//general
+                            updateScenario(scenario,next);
+                        }else if(next_scenario){//intro
+                            scenario = next_scenario;
+                            updateScenario(next_scenario,0);
+                            console.log("Intro - chose scenario "+scenario);
+                        }
+                    },response)
+        
+                })
+            },100)
+            break;
+        case 1:
+            console.log("transition");
+            $("#transition").css("background-image","url('src/assets/"+stageObj.background+"')");
+            $("#transition_text").html(stageObj.text);
+            $("#transition").css("display","flex");
+            setTimeout(function(){
+                $("#transition").addClass("fadedIn");
+                stage = stageObj.transition_next;
+                setTimeout(function(){
+                    if(stage != -1){//not ending screen
+                        $("#game_conversation").html("");
+                        updateScenario(scenario, stage);
+                        //
+                    }else{
+                        if(stageObj.fadeInMsg && stageObj.link){//Ending with fadeIn msg
+                            $("#transition_text").append("<br/><div class='fadeInText fadeObject'><a href='"+stageObj.link+"' target='_blank'>"+stageObj.fadeInMsg+"</a></div>");
+                            setTimeout(function(){
+                                $(".fadeInText").addClass("fadedIn");
+                            },100)
+        
+                        }else if(stageObj.popupImage && stageObj.popupImage.length>0){
+                            $("#popupImage_container").show();
+                            for(i=stageObj.popupImage.length-1;i>=0;i--){
+                                $("#popupImage_container").append("<div class='page popupImage fadeObject' id='popupImage-"+i+"' style='background-image:url(src/assets/Images/Image"+stageObj.popupImage[i]+".jpg)'></div>")
+                            }
+                            setTimeout(function(){
+                                $("#popupImage_container").addClass("fadedIn");
+                                $(".popupImage").click(function(){
+                                    if($(".popupImage").length >1){
+                                        var image = $(this)
+                                        setTimeout(function(){
+                                         image.addClass("fadeOut");
+                                         setTimeout(function(){
+                                            image.remove();
+                                         },500)
+                                        },100)
+                                    }else{
+                                        console.log("This is the last popup Image");
+                                    }
+        
+          
+                                })
+                            },100)              
+                        }
+                    }
+        
+                },transitionFadeOut)
+            },100)
+            break;
+        case 2:
+
+
+            break;
+        default:
+            console.log("No match type");
     }
+
  
 }

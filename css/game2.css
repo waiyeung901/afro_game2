@@ -210,6 +210,7 @@ img{
     color:#fff;
     font-size: 32px;
     background-size: cover;
+    opacity: 0;
 }
 #game_conversation{
     background-repeat: no-repeat;
@@ -240,4 +241,36 @@ img{
     padding: 20px 10px;
     margin-right: 10px;
     cursor: pointer;
+}
+.fadeInText{
+    opacity:0;
+    text-align: center;
+}
+.fadeInText a{
+    text-decoration: none;
+    color:#fff;
+}
+.fadedIn{
+    opacity: 1 !important;
+}
+#transition_text{
+    text-align: center;
+}
+.popupImage{
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#popupImage_container{
+    display:none;
+    z-index: 100;
+    opacity:0;
+
+}
+.fadeObject{
+    transition: opacity 0.5s ease;
+}
+.fadeOut{
+    opacity: 0 !important;
 }
