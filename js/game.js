@@ -35,7 +35,7 @@ var scenarios = [
          {
             "order":1,
             "text":"有咩玩?",
-            "type":2,
+            "type":0,
             "answers":[{
                 "choice_text": "食飯行街",
                 "next_scenario":1
@@ -179,7 +179,7 @@ var scenarios = [
         },
         {
             "order":10,
-            "text":"Bar内, 數杯後微醉...<br/>你決定",
+            "text":"Bar内, 數杯後微醉...<br/>你決定<br/>",
             "type":2,//0:conversation, 1:transition , 2: popup action
             "background":"bg-01.jpg",
             "answers":[{
@@ -235,7 +235,6 @@ $(function(){
     $("#start_btn").click(function(){
         $("#start_screen").hide();
         //showIntro();
-        //updateScenario(scenarios[scenario].stages[stage]);
         updateScenario(0,0);
     })
   
@@ -246,7 +245,7 @@ function updateScenario(scenario,stage){
     //common
     console.log("updateScenraio:"+scenario+","+stage);
     stageObj = scenarios[scenario].stages[stage];
-    $("#game_conversation_choices").html("");
+    $("#game_conversation_choices > div > div").html("");
     switch (stageObj.type) {
         case 0:
             console.log("conversation");
@@ -255,17 +254,19 @@ function updateScenario(scenario,stage){
                 setTimeout(function(){
                     $("#transition").hide();
                 },500)
-                $("#game_conversation").append("<div class='question'>"+stageObj.text+"</div>");
+                $("#game_conversation").append("<div class='question'><div>"+stageObj.text+"</div></div>");
                 for(var i=0;i<stageObj.answers.length;i++){
                     if(stageObj.answers[i].next){//general
-                        $("#game_conversation_choices").append("<div class='choices' data-next="+stageObj.answers[i].next+">"+stageObj.answers[i].choice_text+"</div>");
+                        $("#game_conversation_choices > div > div").append("<div class='choices' data-next="+stageObj.answers[i].next+">"+stageObj.answers[i].choice_text+"</div>");
                     }else if(stageObj.answers[i].next_scenario){//intro
-                        $("#game_conversation_choices").append("<div class='choices' data-next_scenario="+stageObj.answers[i].next_scenario+">"+stageObj.answers[i].choice_text+"</div>");
+                        $("#game_conversation_choices > div > div").append("<div class='choices' data-next_scenario="+stageObj.answers[i].next_scenario+">"+stageObj.answers[i].choice_text+"</div>");
                     }
         
                 }
+                $(".choices").css("pointer-events","auto");
                 $(".choices").click(function(){
-                    $("#game_conversation").append("<div class='answer'>"+$(this).text()+"</div>");
+                    $(".choices").css("pointer-events","none");
+                    $("#game_conversation").append("<div class='answer'><div>"+$(this).text()+"</div></div><div class='clearBoth'></div>");
                     var next = $(this).data("next");
                     var next_scenario = $(this).data("next_scenario");
                     setTimeout(function(){
@@ -331,7 +332,26 @@ function updateScenario(scenario,stage){
             },100)
             break;
         case 2:
+            console.log("popup action")
+            $("#transition").css("background-image","url('src/assets/"+stageObj.background+"')");
+            $("#transition_text").html(stageObj.text);
+            for(i=0;i<stageObj.answers.length;i++){
+                $("#transition_text").append("<div class='choices' data-next="+stageObj.answers[i].next+">"+stageObj.answers[i].choice_text+"</div>");
+            }
+            $(".choices").css("pointer-events","auto");
+            $(".choices").click(function(){
+                $(".choices").css("pointer-events","none");
+                var next = $(this).data("next");
+                setTimeout(function(){
+                    updateScenario(scenario,next);
+                },response)
+            })
+    
 
+            $("#transition").css("display","flex");
+            setTimeout(function(){
+                $("#transition").addClass("fadedIn");
+            },100)
 
             break;
         default:

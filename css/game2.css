@@ -26,6 +26,7 @@ a {
 
 img{
     max-width: 100%;
+    max-height: 100%;
 }
 .page{
     width:100%;
@@ -58,7 +59,7 @@ img{
     opacity: 0.75;
     width: 70%;
     top: 192px;
-    padding: 20px;
+    padding: 30px;
     font-size: 20px;
     text-align: center;
     line-height: 24px;
@@ -86,12 +87,21 @@ img{
     background-position: center;*/
 
 }
-#question{
+.question div, .answer div{
+    display: inline-block;
+    padding: 10px 20px;
+}
+.question div{
+    margin-left:10px;
+    background-color: #31DBE6;
+    border-radius: 10px;
 
-    height:40%;
-    font-size: 24px;
-    border-bottom: 2px solid #FDC558;
-    background-color: rgba(256, 256, 256, 0.5);
+}
+.answer div{
+    background-color: #F798A0;
+    margin-right:10px;
+    float: right;
+    border-radius: 10px;
 }
 .flex{
     height:100%;
@@ -104,8 +114,10 @@ img{
 #choices{
     height:390px;
     border-top: 2px solid #fff;
+  
 }
 .choice {
+
     background-color: #fff;
     display: block;
     text-align: center;
@@ -217,31 +229,91 @@ img{
     font-size: 16px;
     background-size: cover;
     width:100%;
-    height: 60%;
-    top:15%;
+    height: 70%;
+    top:10%;
     background-image: url('../src/assets/msg-bg.jpg');
+    padding-top:20px;
+}
+#game_conversation_top div{
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+}
+div#game_conversation_top img {
+
+    height: 100%;
 }
 #game_conversation_top, #game_conversation_choices{
     width:100%;
-    height:15%;
-    background-color: aquamarine;
+    height:10%;
+    background-color: #F798A0;
 }
 #game_conversation_choices{
-    top:85%;
+    overflow-x: auto;
+    top:90%;
+    
+}
+#game_conversation_choices > div{
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow:hidden;
+}
+#game_conversation_choices > div > div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
 }
 #game_conversation_input{
     width:100%;
     height:10%;
-    top:75%;
-    background-color: #000;
+    top:80%;
+    background-color: #fff;
+}
+#input_field{
+    height: 100%;
+    width: 80%;
+    background-color: #EFEFEF;
+    display: inline-block;
+    margin-left: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+#input_emoji{
+    position: absolute;
+    height: 70%;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+#input_mic{
+    float:right;
+    margin-right: 10px;
+}
+#game_conversation_input > div{
+    height: 70%;
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
 }
 .choices{
     display:inline-block;
     background-color: #fff;
     padding: 20px 10px;
-    margin-right: 10px;
+    margin-right: 20px;
     cursor: pointer;
+    min-width: 50px;
+    text-align: center;
+    border-radius: 10px;
+
 }
+
 .fadeInText{
     opacity:0;
     text-align: center;
@@ -254,7 +326,11 @@ img{
     opacity: 1 !important;
 }
 #transition_text{
+    background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
+    padding: 30px;
+    width:70%;
+    border-radius: 10px;
 }
 .popupImage{
 
@@ -273,4 +349,22 @@ img{
 }
 .fadeOut{
     opacity: 0 !important;
+}
+#transition_text .choices{
+    margin-top:10px;
+    display: block;
+    color:#000;
+}
+.clearBoth{
+    clear: both;
+}
+#conversation_icon{
+    margin-left:10px;
+}
+#conversation_name{
+    margin-left:10px;
+}
+#conversation_more{
+    float:right;
+    margin-right:10px;
 }
