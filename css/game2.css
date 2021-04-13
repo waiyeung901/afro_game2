@@ -233,6 +233,7 @@ img{
     top:10%;
     background-image: url('../src/assets/msg-bg.jpg');
     padding-top:20px;
+    color:#000;
 }
 #game_conversation_top div{
     height: 50%;
@@ -249,11 +250,16 @@ div#game_conversation_top img {
 #game_conversation_top, #game_conversation_choices{
     width:100%;
     height:10%;
+    
+}
+#game_conversation_top{
     background-color: #F798A0;
 }
 #game_conversation_choices{
     overflow-x: auto;
     top:90%;
+    background-color: #6E35A3;
+    color:#000;
     
 }
 #game_conversation_choices > div{
@@ -367,4 +373,7 @@ div#game_conversation_top img {
 #conversation_more{
     float:right;
     margin-right:10px;
+}
+.emoji{
+    height: 16px;
 }

@@ -9,22 +9,27 @@ var scenarios = [
         "id":0,
         "stages": [{
             "order":0,
-            "text":"Hi!你喺邊度做呀？",
+            "text":"Hi!你喺邊度做呀？<img class='emoji' src='src/assets/emoji/emoji_03.png'/>",
             "type":0,
             "answers":[{
                 "choice_text": "街",
+                "display_text": "喺街啊",
                 "next":1
             },{
                 "choice_text": "K",
+                "display_text": "喺K房啊",
                 "next":1       
             },{
                 "choice_text": "桑拿",
+                "display_text": "喺桑拿啊",
                 "next":1      
             },{
                 "choice_text": "一樓一",
+                "display_text": "喺一樓一啊",
                 "next":1      
             },{
                 "choice_text": "足浴",
+                "display_text": "喺足浴啊",
                 "next":1      
             },{
                 "choice_text": "ptgf",
@@ -34,19 +39,23 @@ var scenarios = [
          },
          {
             "order":1,
-            "text":"有咩玩?",
+            "text":"有咩玩?<img class='emoji' src='src/assets/emoji/emoji_05.png'/>",
             "type":0,
             "answers":[{
                 "choice_text": "食飯行街",
+                "display_text": "<img class='emoji' src='src/assets/emoji/emoji_02.png'/>食飯行街啊",
                 "next_scenario":1
             },{
                 "choice_text": "ML",
+                "display_text": "<img class='emoji' src='src/assets/emoji/emoji_02.png'/>ML啊",
                 "next_scenario":2       
             },{
                 "choice_text": "DUP",
+                "display_text": "<img class='emoji' src='src/assets/emoji/emoji_02.png'/>DUP啊",
                 "next_scenario":3      
             },{
                 "choice_text": "猜枚劈酒唱K",
+                "display_text": "<img class='emoji' src='src/assets/emoji/emoji_02.png'/>猜枚劈酒唱K啊",
                 "next_scenario":4      
             },]
     
@@ -69,11 +78,11 @@ var scenarios = [
         },
         {
             "order":1,
-            "text":"食完飯去開房?",
+            "text":"食完飯去開房?<img class='emoji' src='src/assets/emoji/emoji_03.png'/>",
             "type":0,//0:conversation, 1:transition
 
             "answers":[{
-                "choice_text": "笑而不語",
+                "choice_text": "<img class='emoji' src='src/assets/emoji/emoji_07.png'/>",
                 "next":2
             },{
                 "choice_text": "好啊！",
@@ -95,16 +104,16 @@ var scenarios = [
         },     
         {
             "order":3,
-            "text":"唔用套啦，我想舒服啲!",
+            "text":"唔用套啦，我想舒服啲!<img class='emoji' src='src/assets/emoji/emoji_06.png'/>",
             "type":0,//0:conversation, 1:transition
             "answers":[{
-                "choice_text": "嗯...好啦！",
+                "choice_text": "嗯...好啦！<img class='emoji' src='src/assets/emoji/emoji_04.png'/>",
                 "next":5
             },{
                 "choice_text": "唔戴唔得喎！",
                 "next":6      
             },{
-                "choice_text": "笑而不語",
+                "choice_text": "<img class='emoji' src='src/assets/emoji/emoji_07.png'/>",
                 "next":7     
             }]
     
@@ -257,18 +266,30 @@ function updateScenario(scenario,stage){
                 $("#game_conversation").append("<div class='question'><div>"+stageObj.text+"</div></div>");
                 for(var i=0;i<stageObj.answers.length;i++){
                     if(stageObj.answers[i].next){//general
-                        $("#game_conversation_choices > div > div").append("<div class='choices' data-next="+stageObj.answers[i].next+">"+stageObj.answers[i].choice_text+"</div>");
+                        if(stageObj.answers[i].display_text){
+                            $("#game_conversation_choices > div > div").append("<div class='choices' data-display_text='"+stageObj.answers[i].display_text+"' data-next="+stageObj.answers[i].next+">"+stageObj.answers[i].choice_text+"</div>");
+                        }else{
+                            $("#game_conversation_choices > div > div").append("<div class='choices' data-next="+stageObj.answers[i].next+">"+stageObj.answers[i].choice_text+"</div>");
+                        }
+
                     }else if(stageObj.answers[i].next_scenario){//intro
-                        $("#game_conversation_choices > div > div").append("<div class='choices' data-next_scenario="+stageObj.answers[i].next_scenario+">"+stageObj.answers[i].choice_text+"</div>");
+                        $("#game_conversation_choices > div > div").append('<div class="choices" data-display_text="'+stageObj.answers[i].display_text+'" data-next_scenario='+stageObj.answers[i].next_scenario+'>'+stageObj.answers[i].choice_text+'</div>');
                     }
         
                 }
                 $(".choices").css("pointer-events","auto");
                 $(".choices").click(function(){
-                    $(".choices").css("pointer-events","none");
-                    $("#game_conversation").append("<div class='answer'><div>"+$(this).text()+"</div></div><div class='clearBoth'></div>");
                     var next = $(this).data("next");
                     var next_scenario = $(this).data("next_scenario");
+                    var display_text = $(this).data("display_text");
+                    $(".choices").css("pointer-events","none");
+                    if(display_text){
+                        $("#game_conversation").append("<div class='answer'><div>"+display_text+"</div></div><div class='clearBoth'></div>");
+                    }else{
+                        $("#game_conversation").append("<div class='answer'><div>"+$(this).text()+"</div></div><div class='clearBoth'></div>");
+                    }
+
+
                     setTimeout(function(){
                         if(next){//general
                             updateScenario(scenario,next);
@@ -285,6 +306,7 @@ function updateScenario(scenario,stage){
         case 1:
             console.log("transition");
             $("#transition").css("background-image","url('src/assets/"+stageObj.background+"')");
+
             $("#transition_text").html(stageObj.text);
             $("#transition").css("display","flex");
             setTimeout(function(){
@@ -292,6 +314,7 @@ function updateScenario(scenario,stage){
                 stage = stageObj.transition_next;
                 setTimeout(function(){
                     if(stage != -1){//not ending screen
+                        $("#game_conversation").css("background-image","url('src/assets/"+stageObj.background+"')");
                         $("#game_conversation").html("");
                         updateScenario(scenario, stage);
                         //
