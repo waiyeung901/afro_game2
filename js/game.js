@@ -286,7 +286,7 @@ function updateScenario(scenario,stage){
                     if(display_text){
                         $("#game_conversation").append("<div class='answer'><div>"+display_text+"</div></div><div class='clearBoth'></div>");
                     }else{
-                        $("#game_conversation").append("<div class='answer'><div>"+$(this).text()+"</div></div><div class='clearBoth'></div>");
+                        $("#game_conversation").append("<div class='answer'><div>"+$(this).html()+"</div></div><div class='clearBoth'></div>");
                     }
 
 
