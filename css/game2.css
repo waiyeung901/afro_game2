@@ -380,5 +380,6 @@ div#game_conversation_top img {
     margin-right:10px;
 }
 .emoji{
-    height: 16px;
+    font-size: 18px;
+    font-style: normal;
 }

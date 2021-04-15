@@ -9,7 +9,7 @@ var scenarios = [
         "id":0,
         "stages": [{
             "order":0,
-            "text":"Hi!你喺邊度做呀？<img class='emoji' src='src/assets/emoji/emoji_03.png'/>",
+            "text":"Hi!你喺邊度做呀？<i class='emoji'>😉</i>",
             "type":0,
             "answers":[{
                 "choice_text": "街",
@@ -39,23 +39,23 @@ var scenarios = [
          },
          {
             "order":1,
-            "text":"有咩玩?<img class='emoji' src='src/assets/emoji/emoji_05.png'/>",
+            "text":"有咩玩?<i class='emoji'>😜</i>",
             "type":0,
             "answers":[{
                 "choice_text": "食飯行街",
-                "display_text": "<img class='emoji' src='src/assets/emoji/emoji_02.png'/>食飯行街啊",
+                "display_text": "<i class='emoji'>😌</i> 食飯行街啊",
                 "next_scenario":1
             },{
                 "choice_text": "ML",
-                "display_text": "<img class='emoji' src='src/assets/emoji/emoji_02.png'/>ML啊",
+                "display_text": "<i class='emoji'>😌</i> ML啊",
                 "next_scenario":2       
             },{
                 "choice_text": "DUP",
-                "display_text": "<img class='emoji' src='src/assets/emoji/emoji_02.png'/>DUP啊",
+                "display_text": "<i class='emoji'>😌</i> DUP啊",
                 "next_scenario":3      
             },{
                 "choice_text": "猜枚劈酒唱K",
-                "display_text": "<img class='emoji' src='src/assets/emoji/emoji_02.png'/>猜枚劈酒唱K啊",
+                "display_text": "<i class='emoji'>😌</i> 猜枚劈酒唱K啊",
                 "next_scenario":4      
             },]
     
@@ -78,11 +78,11 @@ var scenarios = [
         },
         {
             "order":1,
-            "text":"食完飯去開房?<img class='emoji' src='src/assets/emoji/emoji_03.png'/>",
+            "text":"食完飯去開房?<i class='emoji'>😉</i>",
             "type":0,//0:conversation, 1:transition
 
             "answers":[{
-                "choice_text": "<img class='emoji' src='src/assets/emoji/emoji_07.png'/>",
+                "choice_text": "<i class='emoji'>😊</i>",
                 "next":2
             },{
                 "choice_text": "好啊！",
@@ -104,16 +104,16 @@ var scenarios = [
         },     
         {
             "order":3,
-            "text":"唔用套啦，我想舒服啲!<img class='emoji' src='src/assets/emoji/emoji_06.png'/>",
+            "text":"唔用套啦，我想舒服啲!<i class='emoji'>😜</i>",
             "type":0,//0:conversation, 1:transition
             "answers":[{
-                "choice_text": "嗯...好啦！<img class='emoji' src='src/assets/emoji/emoji_04.png'/>",
+                "choice_text": "嗯...好啦！<i class='emoji'>😰</i>",
                 "next":5
             },{
                 "choice_text": "唔戴唔得喎！",
                 "next":6      
             },{
-                "choice_text": "<img class='emoji' src='src/assets/emoji/emoji_07.png'/>",
+                "choice_text": "<i class='emoji'>😊</i>",
                 "next":7     
             }]
     
@@ -137,7 +137,7 @@ var scenarios = [
             "type":1,//0:conversation, 1:transition
             "transition_next":-1,// for transition only, -1 means last screen
             "background":"bg-03.jpg",
-            "link": "https://hk.yahoo.com",
+            "link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
             "fadeInMsg":"知多d！<br/>健康d！"
     
         },
