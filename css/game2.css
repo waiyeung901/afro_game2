@@ -272,6 +272,7 @@ div#game_conversation_top img {
     display: flex;
     align-items: center;
     overflow-x: auto;
+    justify-content: center;
 }
 #game_conversation_input{
     width:100%;
