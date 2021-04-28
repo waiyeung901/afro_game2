@@ -160,7 +160,7 @@ var scenarios = [
             "type":1,//0:conversation, 1:transition
             "transition_next":-1,// for transition only, -1 means last screen
             "background":"bg-03.jpg",
-            "link": "https://hk.yahoo.com",
+            "link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
             "fadeInMsg":"知多d！<br/>健康d！"
     
         },
@@ -249,7 +249,25 @@ $(function(){
   
 
 })
+function adjustAnswersPosition(){
+    var scrollWidth = $("#game_conversation_choices >div >div")[0].scrollWidth;
+    var widthOnScreen = $("#game_conversation_choices >div >div").width();
+    if(scrollWidth <= widthOnScreen){
+        $("#game_conversation_choices > div > div").css("justify-content","center");
+        $("#game_conversation_choices > div").css("margin-left",0);
+        $("#game_conversation_choices > div").css("margin-right",0);
+        $(".choices").css("margin-left","10px");
+        $(".choices").css("margin-right","10px");
 
+    }else{
+        $("#game_conversation_choices > div > div").css("justify-content","inherit");
+        $("#game_conversation_choices > div").css("margin-left","20px");
+        $("#game_conversation_choices > div").css("margin-right","20px");
+        $(".choices").css("margin-right","20px");
+        $(".choices").css("margin-left",0);
+
+    }
+}
 function updateScenario(scenario,stage){
     //common
     console.log("updateScenraio:"+scenario+","+stage);
@@ -275,7 +293,7 @@ function updateScenario(scenario,stage){
                     }else if(stageObj.answers[i].next_scenario){//intro
                         $("#game_conversation_choices > div > div").append('<div class="choices" data-display_text="'+stageObj.answers[i].display_text+'" data-next_scenario='+stageObj.answers[i].next_scenario+'>'+stageObj.answers[i].choice_text+'</div>');
                     }
-        
+                    adjustAnswersPosition();
                 }
                 $(".choices").css("pointer-events","auto");
                 $(".choices").click(function(){
