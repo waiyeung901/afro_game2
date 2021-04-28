@@ -80,19 +80,13 @@ img{
 #start_btn:hover{
     background-image: url(../src/assets/start-on.png);
 }
-#game_screen{
-    /*background-image: url(../src/assets/start-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;*/
-
-}
 .question div, .answer div{
     display: inline-block;
     padding: 5px 20px;
 }
 .question div{
     margin-left:10px;
+    margin-bottom:10px;
     background-color: #31DBE6;
     border-radius: 10px 10px 10px 0;
 
@@ -100,6 +94,7 @@ img{
 .answer div{
     background-color: #F798A0;
     margin-right:10px;
+    margin-bottom:10px;
     float: right;
     border-radius: 10px 10px 0px 10px;
 }
@@ -220,7 +215,7 @@ img{
     z-index:99;
     background-repeat: no-repeat;
     color:#fff;
-    font-size: 32px;
+    font-size: 28px;
     background-size: cover;
     opacity: 0;
 }
@@ -333,7 +328,7 @@ div#game_conversation_top img {
     text-align: center;
 }
 .fadeInText a{
-    text-decoration: none;
+    text-decoration: underline;
     color:#fff;
 }
 .fadedIn{
@@ -385,4 +380,12 @@ div#game_conversation_top img {
 .emoji{
     font-size: 18px;
     font-style: normal;
+}
+.noBackground{
+    background-image: none !important;
+}
+.wrapperWithBackground{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

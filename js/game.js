@@ -3,6 +3,7 @@ var stage = 0;
 var current = 0; //0:question, 1:answer
 var transitionFadeOut =3000;
 var response = 2000;
+var changedLocation = false;
 
 var scenarios = [
     {
@@ -156,7 +157,7 @@ var scenarios = [
         },
         {
             "order":7,
-            "text":"以為佢同意，過一段時間後唔舒服",
+            "text":"對方以為你同意，過一段時間後唔舒服",
             "type":1,//0:conversation, 1:transition
             "transition_next":-1,// for transition only, -1 means last screen
             "background":"bg-03.jpg",
@@ -219,12 +220,12 @@ var scenarios = [
         },
         {
             "order":13,
-            "text":"記住任何時間都要保持清醒啊！",
+            "text":"記住任何時間都要<br/>保持清醒啊！",
             "type":1,//0:conversation, 1:transition
             "transition_next":-1,// for transition only, -1 means last screen
             "background":"bg-01.jpg",
-            "popupImage":[2]
-    
+            "popupImage":[2],
+            "fadeOut":7000
         },
         {
             "order":14,
@@ -232,7 +233,8 @@ var scenarios = [
             "type":1,//0:conversation, 1:transition
             "transition_next":-1,// for transition only, -1 means last screen
             "background":"bg-02.jpg",
-            "popupImage":[2]
+            "popupImage":[2],
+            "fadeOut":7000
     
         }
 
@@ -267,6 +269,13 @@ function adjustAnswersPosition(){
         $(".choices").css("margin-left",0);
 
     }
+}
+function changeLocation(){
+    $("#game_conversation_top").hide();
+    $("#game_conversation_input").hide();
+    $("#game_conversation").addClass("noBackground");
+    $("#game_screen_wrapper").addClass("wrapperWithBackground");
+    
 }
 function updateScenario(scenario,stage){
     //common
@@ -332,7 +341,10 @@ function updateScenario(scenario,stage){
                 stage = stageObj.transition_next;
                 setTimeout(function(){
                     if(stage != -1){//not ending screen
-                        $("#game_conversation").css("background-image","url('src/assets/"+stageObj.background+"')");
+                        if(!changedLocation){
+                            changeLocation();
+                        }
+                        $("#game_screen_wrapper").css("background-image","url('src/assets/"+stageObj.background+"')");
                         $("#game_conversation").html("");
                         updateScenario(scenario, stage);
                         //
@@ -369,7 +381,7 @@ function updateScenario(scenario,stage){
                         }
                     }
         
-                },transitionFadeOut)
+                },stageObj.fadeOut?stageObj.fadeOut:transitionFadeOut)
             },100)
             break;
         case 2:
