@@ -229,7 +229,7 @@ var scenarios = [
         },
         {
             "order":14,
-            "text":"第二朝，不省人事<br/>斷晒片，唔記得發生咩事<br/>發現袋内嘅銀包電話俾人偷咗而且個客已經走咗<br/>知多啲！<br/>可以點樣保護自己？",
+            "text":"第二朝，你不省人事<br/>斷晒片，唔記得發生咩事<br/>發現袋内嘅銀包電話俾人<br/>偷咗而且個客已經走埋<br/>知多啲！<br/>可以點樣保護自己？",
             "type":1,//0:conversation, 1:transition
             "transition_next":-1,// for transition only, -1 means last screen
             "background":"bg-02.jpg",
