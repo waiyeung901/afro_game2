@@ -268,7 +268,7 @@ var scenarios = [
             "order":2,
             "text":"My Place...",
             "type":1,//0:conversation, 1:transition
-            "transition_next":99,// for transition only
+            "transition_next":4,// for transition only
             "background":"bg-04.jpg"
     
         },
@@ -283,15 +283,25 @@ var scenarios = [
                 "choice_text": "唔想",
                 "next":7
             }],
-            "background":"bg-02.jpg"
+            "background":"bg-17.jpg"
     
         },
+
         {
             "order":4,
-            "text":"沖完涼...",
-            "type":99,//0:conversation, 1:transition
-            "transition_next":2,// for transition only
-            "background":"bg-02.jpg"
+            "text":"客：有咩plan?<br/>你:",
+            "type":2,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "半套",
+                "next":16
+            },{
+                "choice_text": "全套",
+                "next":99
+            },{
+                "choice_text": "全套+後花園",
+                "next":99        
+            }],
+            "background":"bg-04.jpg"
     
         },
         {
@@ -413,6 +423,51 @@ var scenarios = [
             "background":"bg-02.jpg"
     
         },
+
+        {
+            "order":16,
+            "text":"你取出口交套<br/>客人拒絕：<br/>口唔使用啦，環保啲<br/>唔會傳染嘅",
+            "type":2,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "真嘅？信你一次啦！",
+                "next":17
+            },{
+                "choice_text": "唔好啦！口都可以傳染㗎！出嚟玩都玩得安心啲!",
+                "next":18
+            }],
+            "background":"bg-04.jpg"
+    
+        },
+        {
+            "order":17,
+            "text":"過一段時間後",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only
+            "background":"bg-13.jpg",
+            "link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+            "fadeInMsg":"口出疱疹"
+    
+        },
+        {
+            "order":18,
+            "type":1,//0:conversation, 1:transition, 2:popup action
+            "transition_next":-1,// for transition only
+            "popupImage":[10],
+            "popup_next":19,
+            "background":"bg-13.jpg"
+    
+        },
+        {
+            "order":19,
+            "text":"知多啲！",
+            "type":1,//0:conversation, 1:transition, 2:popup action, 3: popup with next btn
+            "transition_next":-1,// for transition only
+            "background":"bg-13.jpg",
+            "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease"
+            
+
+    
+        },
     ]
 },{
     id:3,
@@ -428,7 +483,7 @@ $(function(){
     $("#start_btn").click(function(){
         $("#start_screen").hide();
         //showIntro();
-        updateScenario(0,0);
+        updateScenario(2,18);
     })
   
 
@@ -514,10 +569,17 @@ function updateScenario(scenario,stage){
             break;
         case 1:
             console.log("transition");
-            $("#transition").css("background-image","url('src/assets/"+stageObj.background+"')");
+            if(stageObj.text){
+                $("#transition").css("background-image","url('src/assets/"+stageObj.background+"')");
+                if(stageObj.text_link){
+                    $("#transition_text").html("<a href='"+stageObj.text_link+"' target='_blank'>"+stageObj.text+"</a>");
+                }else{
+                    $("#transition_text").html(stageObj.text);
+                }
 
-            $("#transition_text").html(stageObj.text);
-            $("#transition").css("display","flex");
+                $("#transition").css("display","flex");
+            }
+
             setTimeout(function(){
                 $("#transition").addClass("fadedIn");
                 stage = stageObj.transition_next;
@@ -541,6 +603,20 @@ function updateScenario(scenario,stage){
                             $("#popupImage_container").show();
                             for(i=stageObj.popupImage.length-1;i>=0;i--){
                                 $("#popupImage_container").append("<div class='page popupImage fadeObject' id='popupImage-"+i+"' style='background-image:url(src/assets/Images/Image"+stageObj.popupImage[i]+".jpg)'></div>")
+                            }
+                            if(stageObj.popup_next){
+                                $("#popupImage_container").append("<div class='popup_next_btn object' data-next="+stageObj.popup_next+">NEXT</div>")
+                                $(".popup_next_btn").click(function(){
+                                    $(".popup_next_btn").css("pointer-events","none");
+                                    var next = $(this).data("next");
+                                    setTimeout(function(){
+                                        $("#popupImage_container").removeClass("fadedIn");
+                                        setTimeout(function(){
+                                            $("#popupImage_container").hide();
+                                        },500)
+                                        updateScenario(scenario,next);
+                                    },response)
+                                })
                             }
                             setTimeout(function(){
                                 $("#popupImage_container").addClass("fadedIn");
