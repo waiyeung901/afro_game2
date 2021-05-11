@@ -240,6 +240,188 @@ var scenarios = [
 
 
     ]
+},{
+    id:2,
+    "stages":[
+        {
+            "order":0,
+            "text":"ur place? my place?",
+            "type":0,//0:conversation, 1:transition , 2: popup action
+            "answers":[{
+                "choice_text": "ur place",
+                "next":1
+            },{
+                "choice_text": "my place",
+                "next":2
+            }]
+    
+        },
+        {
+            "order":1,
+            "text":"Yr Place...",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":5,// for transition only
+            "background":"bg-02.jpg"
+    
+        },
+        {
+            "order":2,
+            "text":"My Place...",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":99,// for transition only
+            "background":"bg-04.jpg"
+    
+        },
+        {
+            "order":3,
+            "text":"搞嘢中...<br/>客：想唔想留低回憶？<br/>你會：",
+            "type":2,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "拍下都冇所謂！",
+                "next":7
+            },{
+                "choice_text": "唔想",
+                "next":7
+            }],
+            "background":"bg-02.jpg"
+    
+        },
+        {
+            "order":4,
+            "text":"沖完涼...",
+            "type":99,//0:conversation, 1:transition
+            "transition_next":2,// for transition only
+            "background":"bg-02.jpg"
+    
+        },
+        {
+            "order":5,
+            "text":"客屋企搞嘢中...發現有光閃下閃下，懷疑被偷拍<br/>你會：",
+            "type":2,//0:conversation, 1:transition , 2: popup action
+            "background":"bg-02.jpg",
+            "answers":[{
+                "choice_text": "即時喝止",
+                "next":6
+            },{
+                "choice_text": "有懷疑但唔敢問",
+                "next":7
+            },{
+                "choice_text": "唔理，繼續搞嘢",
+                "next":3               
+            }]
+    
+        },
+        {
+            "order":6,
+            "text":"發現偷拍工具，<br/>客人拒絕承認，你會：",
+            "type":2,//0:conversation, 1:transition , 2: popup action
+            "background":"bg-02.jpg",
+            "answers":[{
+                "choice_text": "要求delete",
+                "next":8
+            },{
+                "choice_text": "要求馬上付款離去",
+                "next":11
+            }]
+    
+        },
+        {
+            "order":7,
+            "text":"完事，客：你去沖涼先，<br/>你會：",
+            "type":2,//0:conversation, 1:transition , 2: popup action
+            "background":"bg-02.jpg",
+            "answers":[{
+                "choice_text": "肯",
+                "next":12
+            },{
+                "choice_text": "唔肯",
+                "next":13
+            }]
+    
+        },
+        {
+            "order":8,
+            "text":"客唔肯，<br/>你會：",
+            "type":2,//0:conversation, 1:transition , 2: popup action
+            "background":"bg-02.jpg",
+            "answers":[{
+                "choice_text": "報警",
+                "next":9
+            },{
+                "choice_text": "搶走並破壞偷拍工具",
+                "next":10
+            }]
+    
+        },
+        {
+            "order":9,
+            "text":"遇到有懷疑<br/>最好即刻停落黎。<br/>而家香港法例暫時未能<br/>處理私人地方內嘅偷拍<br/>行為，咁可以點？",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-02.jpg",
+            "popupImage":[4,5,6],
+            "fadeOut":7000
+        },
+        {
+            "order":10,
+            "text":"雙方打鬥受傷<br/>你報警反被告刑事毀壞<br/>咁可以點？",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-13.jpg",
+            "popupImage":[4,5,6],
+            "fadeOut":7000
+        },
+        {
+            "order":11,
+            "text":"客唔肯...<br/>爭執並禁錮你...<br/>幾日後發現女屍",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-11.jpg",
+            "popupImage":[5,6,7,8],
+            "fadeOut":7000
+        },
+        {
+            "order":12,
+            "text":"沖完涼...<br/>客：我已copy晒你<br/>啲資料，唔想俾人知就<br/>之後記住聽我話",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":14,// for transition only
+            "background":"bg-02.jpg"
+    
+        },
+        {
+            "order":13,
+            "text":"離開",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":15,// for transition only
+            "background":"bg-02.jpg"
+    
+        },
+        {
+            "order":14,
+            "text":"長期被勒索<br/>後來偷拍片流出<br/>唔想咁，可以點？",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only
+            "background":"bg-13.jpg",
+            "popupImage":[4,9],
+    
+        },
+        {
+            "order":15,
+            "text":"客人以偷拍片段威脅",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":14,// for transition only
+            "background":"bg-02.jpg"
+    
+        },
+    ]
+},{
+    id:3,
+    "stages":[
+    ]
+},{
+    id:4,
+    "stages":[
+    ]
 }]
 
 $(function(){
