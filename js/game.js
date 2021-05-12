@@ -296,10 +296,10 @@ var scenarios = [
                 "next":16
             },{
                 "choice_text": "全套",
-                "next":99
+                "next":20
             },{
                 "choice_text": "全套+後花園",
-                "next":99        
+                "next":27        
             }],
             "background":"bg-04.jpg"
     
@@ -468,6 +468,194 @@ var scenarios = [
 
     
         },
+        {
+            "order":20,
+            "text":"準備搞嘢客戴兩個套，<br/>你：",
+            "type":2,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "由佢",
+                "next":21
+            },{
+                "choice_text": "阻止佢",
+                "next":25
+            }],
+            "background":"bg-22.jpg"
+                
+        },
+        {
+            "order":21,
+            "text":"做做吓穿套",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":22,// for transition only
+            "background":"bg-22.jpg"
+    
+        },
+        {
+            "order":22,
+            "text":"你想換套，客唔肯<br/>格硬嚟，你表示唔好<br/>完事後你會：",
+            "type":2,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "報警",
+                "next":23
+            },{
+                "choice_text": "覺得自己都有責任，息事寧人算數",
+                "next":24
+            }],
+            "background":"bg-22.jpg"
+    
+        },
+        {
+            "order":23,
+            "text":"性暴力/强姦刑事罪行條例",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only
+            "background":"bg-22.jpg",
+            "text_link":"https://www.afrohealth.org.hk/what-is-venereal-disease",
+    
+        },
+        {
+            "order":24,
+            "text":"意外懷孕/ 安全避孕指南(事後丸)/性病",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only
+            "background":"bg-22.jpg",
+            "text_link":"https://www.afrohealth.org.hk/what-is-venereal-disease",
+    
+        },
+        {
+            "order":25,
+            "text":"安全啲喎！<br/>一個穿咗仲有另外一個<br/>頂住！<br/>你：",
+            "type":2,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "真嘅？信你一次啦！",
+                "next":21
+            },{
+                "choice_text": "唔好啦！你估裝橙咩！安全套係乳膠做㗎，兩個互相摩擦仲易穿啊！",
+                "next":26
+            }],
+            "background":"bg-22.jpg"
+    
+        },
+        {
+            "order":26,
+            "text":"客人接受，完成交易",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only
+            "text_link":"https://www.afrohealth.org.hk/what-is-venereal-disease",
+            "background":"bg-22.jpg"
+    
+        },
+        {
+            "order":27,
+            "text":"準備後花園...",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":28,// for transition only
+            "background":"bg-16.jpg"
+    
+        },
+        {
+            "order":28,
+            "text":"你拎套出嚟...<br/>客：唔使用啦，又唔會有BB<br/>你：",
+            "type":2,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "又係喎！",
+                "next":29
+            },{
+                "choice_text": "No",
+                "next":99
+            }],
+            "background":"bg-18.jpg"
+    
+        },
+        {
+            "order":29,
+            "text":"你準備搽潤滑劑<br/>客制止<br/>你會：",
+            "type":2,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "知高風險但無奈接受",
+                "next":30
+            },{
+                "choice_text": "扮去廁所用針筒打潤滑劑入去",
+                "next":99
+            },{
+                "choice_text": "堅決拒絕",
+                "next":99
+            }],
+            "background":"bg-19.jpg"
+    
+        },
+        {
+            "order":30,
+            "text":"過程痛苦，之後發現流血",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":31,// for transition only
+            "background":"bg-20.jpg"
+    
+        },
+        {
+            "order":31,
+            "text":"你：好痛吖，唔搞喇！<br/>客：吓...咁我點算啊？<br/>你：",
+            "type":2,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "幫你用手打出嚟啦！",
+                "next":32
+            },{
+                "choice_text": "唔得喇！我真係好痛！",
+                "next":34
+            }],
+            "background":"bg-20.jpg"
+    
+        },
+        {
+            "order":32,
+            "text":"客：唔好啦，你怕咪之後啷下個口殺菌囉！<br/>你：",
+            "type":2,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "都可以嘅...",
+                "next":17
+            },{
+                "choice_text": "咪傻啦！呢啲邊可以殺菌，唔做就係唔做，你要就搵其他女仔啦！",
+                "next":33
+            }],
+            "background":"bg-20.jpg"
+    
+        },
+        {
+            "order":33,
+            "text":"冷知識Q19",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only
+            "background":"bg-20.jpg",
+            "text_link":"https://www.afrohealth.org.hk/what-is-venereal-disease",
+    
+        },
+        {
+            "order":34,
+            "text":"客無奈接受，離開。",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only
+            "next_btn":35,
+            "background":"bg-20.jpg"
+    
+        },
+        {
+            "order":35,
+            "text":"肛門冇分泌㗎！唔想受傷就要落潤滑劑喇！",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only
+            "next_btn":36,
+            "background":"bg-20.jpg"
+    
+        },
+        {
+            "order":36,
+            "text":"潤滑劑",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only
+            "background":"bg-20.jpg",
+            "text_link":"https://www.afrohealth.org.hk/what-is-venereal-disease",
+    
+        },
     ]
 },{
     id:3,
@@ -483,7 +671,7 @@ $(function(){
     $("#start_btn").click(function(){
         $("#start_screen").hide();
         //showIntro();
-        updateScenario(2,18);
+        updateScenario(2,31);
     })
   
 
@@ -579,6 +767,17 @@ function updateScenario(scenario,stage){
 
                 $("#transition").css("display","flex");
             }
+            if(stageObj.next_btn){
+                $("#transition").append("<div class='next_btn object' data-next="+stageObj.next_btn+">NEXT</div>")
+                $(".next_btn").click(function(){
+                    $(".next_btn").css("pointer-events","none");
+                    $(this).hide();
+                    var next = $(this).data("next");
+                    setTimeout(function(){
+                             updateScenario(scenario,next);
+                    },response)
+                })                
+            }
 
             setTimeout(function(){
                 $("#transition").addClass("fadedIn");
@@ -605,9 +804,9 @@ function updateScenario(scenario,stage){
                                 $("#popupImage_container").append("<div class='page popupImage fadeObject' id='popupImage-"+i+"' style='background-image:url(src/assets/Images/Image"+stageObj.popupImage[i]+".jpg)'></div>")
                             }
                             if(stageObj.popup_next){
-                                $("#popupImage_container").append("<div class='popup_next_btn object' data-next="+stageObj.popup_next+">NEXT</div>")
-                                $(".popup_next_btn").click(function(){
-                                    $(".popup_next_btn").css("pointer-events","none");
+                                $("#popupImage_container").append("<div class='next_btn object' data-next="+stageObj.popup_next+">NEXT</div>")
+                                $(".next_btn").click(function(){
+                                    $(".next_btn").css("pointer-events","none");
                                     var next = $(this).data("next");
                                     setTimeout(function(){
                                         $("#popupImage_container").removeClass("fadedIn");

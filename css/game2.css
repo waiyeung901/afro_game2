@@ -315,8 +315,7 @@ div#game_conversation_top img {
     min-width: 50px;
     text-align: center;
     border-radius: 10px;
-    height: 48px;
-    line-height: 48px;
+    line-height: 36px;
 }
 
 .choices:hover{
@@ -389,9 +388,10 @@ div#game_conversation_top img {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.popup_next_btn{
+.next_btn{
     padding:10px 20px;
     background-color: #fff;
+    color:#000;
     left: 0;
     right: 0;
     margin: 0 auto;
