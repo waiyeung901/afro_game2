@@ -274,23 +274,17 @@ var scenarios = [
         },
         {
             "order":3,
-            "text":"搞嘢中...<br/>客：想唔想留低回憶？<br/>你會：",
-            "type":2,//0:conversation, 1:transition
-            "answers":[{
-                "choice_text": "拍下都冇所謂！",
-                "next":7
-            },{
-                "choice_text": "唔想",
-                "next":7
-            }],
-            "background":"bg-17.jpg"
+            "text":"搞嘢中...",
+            "type":1,//0:conversation, 1:transition
+            "background":"bg-17.jpg",
+            "transition_next":37,// for transition only
     
         },
 
         {
             "order":4,
-            "text":"客：有咩plan?<br/>你:",
-            "type":2,//0:conversation, 1:transition
+            "text":"客：有咩plan?",
+            "type":0,//0:conversation, 1:transition
             "answers":[{
                 "choice_text": "半套",
                 "next":16
@@ -426,16 +420,10 @@ var scenarios = [
 
         {
             "order":16,
-            "text":"你取出口交套<br/>客人拒絕：<br/>口唔使用啦，環保啲<br/>唔會傳染嘅",
-            "type":2,//0:conversation, 1:transition
-            "answers":[{
-                "choice_text": "真嘅？信你一次啦！",
-                "next":17
-            },{
-                "choice_text": "唔好啦！口都可以傳染㗎！出嚟玩都玩得安心啲!",
-                "next":18
-            }],
-            "background":"bg-04.jpg"
+            "text":"你取出口交套 客人拒絕",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":38,
+            "background":"bg-18.jpg"
     
         },
         {
@@ -470,7 +458,7 @@ var scenarios = [
         },
         {
             "order":20,
-            "text":"準備搞嘢客戴兩個套，<br/>你：",
+            "text":"準備搞嘢客戴兩個套，你：",
             "type":2,//0:conversation, 1:transition
             "answers":[{
                 "choice_text": "由佢",
@@ -524,8 +512,8 @@ var scenarios = [
         },
         {
             "order":25,
-            "text":"安全啲喎！<br/>一個穿咗仲有另外一個<br/>頂住！<br/>你：",
-            "type":2,//0:conversation, 1:transition
+            "text":"安全啲喎！一個穿咗仲有另外一個頂住！",
+            "type":0,//0:conversation, 1:transition
             "answers":[{
                 "choice_text": "真嘅？信你一次啦！",
                 "next":21
@@ -555,31 +543,25 @@ var scenarios = [
         },
         {
             "order":28,
-            "text":"你拎套出嚟...<br/>客：唔使用啦，又唔會有BB<br/>你：",
-            "type":2,//0:conversation, 1:transition
-            "answers":[{
-                "choice_text": "又係喎！",
-                "next":29
-            },{
-                "choice_text": "No",
-                "next":99
-            }],
+            "text":"你拎套出嚟...",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":39,
             "background":"bg-18.jpg"
     
         },
         {
             "order":29,
-            "text":"你準備搽潤滑劑<br/>客制止<br/>你會：",
+            "text":"你準備搽潤滑劑，客制止，<br/>你會：",
             "type":2,//0:conversation, 1:transition
             "answers":[{
                 "choice_text": "知高風險但無奈接受",
                 "next":30
             },{
                 "choice_text": "扮去廁所用針筒打潤滑劑入去",
-                "next":99
+                "next":40
             },{
                 "choice_text": "堅決拒絕",
-                "next":99
+                "next":46
             }],
             "background":"bg-19.jpg"
     
@@ -594,8 +576,16 @@ var scenarios = [
         },
         {
             "order":31,
-            "text":"你：好痛吖，唔搞喇！<br/>客：吓...咁我點算啊？<br/>你：",
-            "type":2,//0:conversation, 1:transition
+            "text":"唔好啦，你怕咪之後啷下個口殺菌囉！",
+            "pre_conversation":[{
+                        "from":1,
+                        "text":"好痛吖，唔搞喇！"
+                    },
+                    {
+                        "from":0,
+                        "text":"吓...咁我點算啊？"
+                    }],
+            "type":0,//0:conversation, 1:transition
             "answers":[{
                 "choice_text": "幫你用手打出嚟啦！",
                 "next":32
@@ -656,6 +646,187 @@ var scenarios = [
             "text_link":"https://www.afrohealth.org.hk/what-is-venereal-disease",
     
         },
+        {
+            "order":37,
+            "text":"想唔想留低回憶？",
+            "type":0,//0:conversation, 1:transition
+            "background":"bg-17.jpg",
+            "answers":[{
+                "choice_text": "拍下都冇所謂！",
+                "next":7
+            },{
+                "choice_text": "唔想",
+                "next":7
+            }]
+    
+        },
+        {
+            "order":38,
+            "text":"口唔使用啦，環保啲，唔會傳染嘅",
+            "type":0,//0:conversation, 1:transition
+            "background":"bg-17.jpg",
+            "answers":[{
+                "choice_text": "真嘅？信你一次啦！",
+                "next":17
+            },{
+                "choice_text": "唔好啦！口都可以傳染㗎！出嚟玩都玩得安心啲!",
+                "next":18
+            }],
+    
+        },
+        {
+            "order":39,
+            "text":"唔使用啦，又唔會有BB",
+            "type":0,//0:conversation, 1:transition
+            "background":"bg-18.jpg",
+            "answers":[{
+                "choice_text": "又係喎！",
+                "next":29
+            },{
+                "choice_text": "No",
+                "next":47
+            }]
+    
+        },
+        {
+            "order":40,
+            "text":"肛交完，準備陰道性交",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":41,// for transition only
+            "background":"bg-19.jpg"
+        
+        },
+        {
+            "order":41,
+            "text":"唔用套啦，我想舒服啲！",
+            "type":0,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "嗯...好啦！",
+                "next":42
+            },{
+                "choice_text": "唔戴唔得喎！",
+                "next":43
+            },{
+                "choice_text": "<i class='emoji'>😊</i>",
+                "next":45            
+            }],
+            "background":"bg-17.jpg"
+        
+        },
+        {
+            "order":42,
+            "text":"過一段時間後唔舒服",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-03.jpg",
+            "link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+            "fadeInMsg":"知多d！<br/>健康d！"
+    
+        },
+        {
+            "order":43,
+            "text":"加$?",
+            "type":0,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "嗯...一次咁多啦！",
+                "next":5
+            },{
+                "choice_text": "加錢都唔得！",
+                "next":44
+            }],
+            "background":"bg-17.jpg"
+    
+        },
+        {
+            "order":44,
+            "text":"知多d!<br/>遇到咁嘅情況唔知點算好？<br/>可以學下佢點回應",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "popupImage":[1],
+            "background":"bg-17.jpg"
+    
+        },
+        {
+            "order":45,
+            "text":"完事，對方以為你同意，<br/>過一段時間後唔舒服",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-03.jpg",
+            "link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+            "fadeInMsg":"知多d！<br/>健康d！"
+    
+        },
+        {
+            "order":46,
+            "text":"你：唔可以，後面冇水㗎！<br/>你想痛死我咩，你都唔舒服啦！<br/>客接受...肛交完，準備陰道性交",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":41,// for transition only
+            "background":"bg-19.jpg"
+        
+        },
+        {
+            "order":47,
+            "text":"你：唔得，唔係驚有冇 BB, 係驚有咩病啊！<br/>客：我好乾淨㗎，冇病嘅<br/>你：冇樣睇㗎！大家都唔知大家有冇事，我慣咗個個客都要戴㗎，大家安心啲！<br/>客聽完乖乖戴套...",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":48,// for transition only
+            "background":"bg-18.jpg"
+        
+        },
+        {
+            "order":48,
+            "text":"",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":49,// for transition only
+            "background":"bg-16.jpg"
+        
+        },
+        {
+            "order":49,
+            "text":"客人準備陰道性交...你會：",
+            "type":2,//0:conversation, 1:transition
+            "background":"bg-17.jpg",
+            "answers":[{
+                "choice_text": "迎合客人",
+                "next":50
+            },{
+                "choice_text": "制止要求客人換套",
+                "next":51
+            }],
+        },
+        {
+            "order":50,
+            "text":"做小一步，可以好大件事，慳咩都好就係唔可以慳個套！",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-17.jpg",
+            "link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+            "fadeInMsg":"知多d！"
+    
+        },
+        {
+            "order":51,
+            "text":"客：咁麻煩，咩 mood 都冇晒喇！你：",
+            "type":2,//0:conversation, 1:transition
+            "background":"bg-17.jpg",
+            "answers":[{
+                "choice_text": "覺得風險唔大，順從要求",
+                "next":50
+            },{
+                "choice_text": " 拒絕並解釋",
+                "next":52
+            }],
+        
+        },
+        {
+            "order":52,
+            "text":"你：咁唔衞生！<br/>慳咩都好就係唔可以慳個套！",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-17.jpg",
+            "link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+            "fadeInMsg":"知多d！"
+    
+        },
     ]
 },{
     id:3,
@@ -664,6 +835,146 @@ var scenarios = [
 },{
     id:4,
     "stages":[
+        {
+            "order":0,
+            "text":"K 房内猜枚劈酒唱K中...",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":1,// for transition only
+            "background":"bg-08.jpg"
+        
+        },
+        {
+            "order":1,
+            "text":"客上下其手，<br/>你唔想所以借尿遁...<br/>你：吖吔，飲得太多，去一去廁所先...<br/>返到 K 房後，客人遞杯酒俾你，<br/>客：再嚟！飲！<br/>你會：",
+            "type":2,//0:conversation, 1:transition
+            "background":"bg-23.jpg",
+            "answers":[{
+                "choice_text": "接咗嚟飲",
+                "next":2
+            },{
+                "choice_text": " 我飲唔到咁多喇！",
+                "next":6
+            }],
+        
+        },
+        {
+            "order":2,
+            "text":"飲完覺得迷迷糊糊咁...<br/>你會：",
+            "type":2,//0:conversation, 1:transition
+            "background":"bg-23.jpg",
+            "answers":[{
+                "choice_text": "行出房搵人求救",
+                "next":3
+            },{
+                "choice_text": " 留係房入面休息",
+                "next":5
+            }],
+        
+        },
+        {
+            "order":3,
+            "text":"最後有人扶你去休息室休息",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":4,// for transition only
+            "background":"bg-23.jpg"
+        
+        },
+        {
+            "order":4,
+            "text":"知多d!<br/>慎防加料！唔好飲一啲離開咗視線範圍嘅嘢飲啊！",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "popupImage":[11,12,13,14,15],
+            "background":"bg-17.jpg"
+    
+        },
+        {
+            "order":5,
+            "text":"片刻清醒後，<br/>發現自己衣衫不整，<br/>房淨係得返自己一個，<br/>斷晒片",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":4,// for transition only
+            "background":"bg-24.jpg"
+        
+        },
+        {
+            "order":6,
+            "text":"客繼續上下其手，想除你件衫<br/>你會：",
+            "type":2,//0:conversation, 1:transition
+            "background":"bg-25.jpg",
+            "answers":[{
+                "choice_text": "你係咪會俾家用我先？",
+                "next":7
+            },{
+                "choice_text": " 不如我哋出去吖，有得沖埋涼添！",
+                "next":11
+            }],
+        
+        },
+        {
+            "order":7,
+            "text":"客：你話點就點啦<br/>(係銀包拎錢)",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":8,// for transition only
+            "background":"bg-25.jpg"
+        
+        },
+        {
+            "order":8,
+            "text":"昏暗中，睇唔清楚客人做緊啲咩... ",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":9,// for transition only
+            "background":"bg-25.jpg"
+        
+        },
+        {
+            "order":9,
+            "text":"完咗客人走咗之後，<br/>你發現地下有個冇精液嘅安全套",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":10,// for transition only
+            "background":"bg-25.jpg"
+        
+        },
+        {
+            "order":10,
+            "text":"發現下面唔舒服<br/>知多d!<br/>唔建議係唔理想（如光線/空間不足，衞生條件較差）嘅地方進行性交易",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-07.jpg",
+            "text_link":"https://www.afrohealth.org.hk/what-is-venereal-disease"
+    
+        },
+        {
+            "order":11,
+            "text":"客帶你出街<br/>你會：",
+            "type":2,//0:conversation, 1:transition
+            "background":"bg-25.jpg",
+            "answers":[{
+                "choice_text": "先問媽咪拎定幾個套徬身",
+                "next":12
+            },{
+                "choice_text": " 諗住客人有，又驚袋住係身有警察剿到會有麻煩，到時先算",
+                "next":13
+            }],
+        
+        },
+        {
+            "order":12,
+            "text":"今日平安度過一日！<br/>知多d!",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "popupImage":[16,17],
+            "background":"bg-25.jpg"
+    
+        },
+        {
+            "order":13,
+            "text":"真唔真？",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "popupImage":[18],
+            "background":"bg-25.jpg"
+    
+        },
     ]
 }]
 
@@ -712,9 +1023,21 @@ function updateScenario(scenario,stage){
             console.log("conversation");
             setTimeout(function(){
                 $("#transition").removeClass("fadedIn");
+                if(stageObj.background){
+                    $("#game_screen_wrapper").css("background-image","url('src/assets/"+stageObj.background+"')");
+                }
                 setTimeout(function(){
                     $("#transition").hide();
                 },500)
+                if(stageObj.pre_conversation){
+                    for(var i=0;i<stageObj.pre_conversation.length;i++){
+                        if(stageObj.pre_conversation[i].from == 0){
+                            $("#game_conversation").append("<div class='question'><div>"+stageObj.pre_conversation[i].text+"</div></div><div class='clearBoth'></div>");
+                        }else{
+                            $("#game_conversation").append("<div class='answer'><div>"+stageObj.pre_conversation[i].text+"</div></div><div class='clearBoth'></div>");
+                        }
+                    }
+                }
                 $("#game_conversation").append("<div class='question'><div>"+stageObj.text+"</div></div>");
                 for(var i=0;i<stageObj.answers.length;i++){
                     if(stageObj.answers[i].next){//general
@@ -757,16 +1080,23 @@ function updateScenario(scenario,stage){
             break;
         case 1:
             console.log("transition");
-            if(stageObj.text){
+
                 $("#transition").css("background-image","url('src/assets/"+stageObj.background+"')");
-                if(stageObj.text_link){
-                    $("#transition_text").html("<a href='"+stageObj.text_link+"' target='_blank'>"+stageObj.text+"</a>");
+                if(stageObj.text){
+                    if(stageObj.text_link){
+                        $("#transition_text").html("<a href='"+stageObj.text_link+"' target='_blank'>"+stageObj.text+"</a>");
+                    }else{
+                        $("#transition_text").html(stageObj.text);
+                    }
+                    $("#transition_text").show();
                 }else{
-                    $("#transition_text").html(stageObj.text);
+                    $("#transition_text").hide();
+                    $("#transition_text").html("");
                 }
 
+
                 $("#transition").css("display","flex");
-            }
+
             if(stageObj.next_btn){
                 $("#transition").append("<div class='next_btn object' data-next="+stageObj.next_btn+">NEXT</div>")
                 $(".next_btn").click(function(){
@@ -845,6 +1175,7 @@ function updateScenario(scenario,stage){
             console.log("popup action")
             $("#transition").css("background-image","url('src/assets/"+stageObj.background+"')");
             $("#transition_text").html(stageObj.text);
+            $("#transition_text").show();
             for(i=0;i<stageObj.answers.length;i++){
                 $("#transition_text").append("<div class='choices' data-next="+stageObj.answers[i].next+">"+stageObj.answers[i].choice_text+"</div>");
             }
