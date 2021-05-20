@@ -831,6 +831,372 @@ var scenarios = [
 },{
     id:3,
     "stages":[
+        {
+            "order":0,
+            "text":"按摩房内按摩中...",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":1,// for transition only
+            "background":"bg-06.jpg"
+        
+        },
+        {
+            "order":1,
+            "text":"有冇其他服務？",
+            "type":0,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "你想玩咩？:)",
+                "next":2
+            },{
+                "choice_text": "我哋唔可以係呢度做呢啲嘢㗎！",
+                "next":11
+            },{
+                "choice_text": "摸而不語",
+                "next":24               
+            }],
+            "background":"bg-06.jpg"
+    
+        },
+        {
+            "order":2,
+            "text":"我想你幫我用口...",
+            "type":0,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "加多小小吖！",
+                "next":3
+            },{
+                "choice_text": "幫你用手打出嚟啦！",
+                "next":9
+            }],
+            "background":"bg-06.jpg"
+    
+        },
+        {
+            "order":3,
+            "text": "OK!",
+            "type":0,//customer ans and transition
+            "next":4
+
+        },
+        {
+            "order":4,
+            "text":"你取出口交套，客人拒絕",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":5,// for transition only
+            "background":"bg-18.jpg"
+        
+        },
+        {
+            "order":5,
+            "text":"口唔使用啦，環保啲，唔會傳染嘅",
+            "type":0,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "真嘅？信你一次啦!",
+                "next":6
+            },{
+                "choice_text": "唔好啦，口都可以傳染㗎！出嚟玩都玩得安心啲！",
+                "next":7
+            }],
+            "background":"bg-18.jpg"
+        
+        },
+        {
+            "order":6,
+            "text":"過一段時間後",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-13.jpg",
+            "link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+            "fadeInMsg":"口出疱疹"
+    
+        },
+        {
+            "order":7,
+            "type":1,//0:conversation, 1:transition, 2:popup action
+            "transition_next":-1,// for transition only
+            "popupImage":[10],
+            "popup_next":8,
+            "background":"bg-18.jpg"
+    
+        },
+        {
+            "order":8,
+            "text":"知多啲！",
+            "type":1,//0:conversation, 1:transition, 2:popup action, 3: popup with next btn
+            "transition_next":-1,// for transition only
+            "background":"bg-18.jpg",
+            "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease"
+            
+
+    
+        },
+        {
+            "order":9,
+            "text":"唔好啦，你怕咪之後啷下個口殺菌囉！",
+            "type":0,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "都可以嘅...",
+                "next":6
+            },{
+                "choice_text": "呢啲邊可以殺菌，唔做就係唔做，你要就搵其他女仔啦！",
+                "next":10
+            }],
+            "background":"bg-06.jpg"
+    
+        },
+        {
+            "order":10,
+            "text":"冷知識Q19",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only
+            "background":"bg-06.jpg",
+            "text_link":"https://www.afrohealth.org.hk/what-is-venereal-disease",
+    
+        },
+        {
+            "order":11,
+            "text":"咁不如去飲杯嘢？",
+            "type":0,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "好喎！",
+                "next":12
+            },{
+                "choice_text": "唔嘞，我都係想早啲返屋企！",
+                "next":16
+            }],
+            "background":"bg-06.jpg"
+    
+        },
+        {
+            "order":12,
+            "text":"Bar内, 數杯後微醉...<br/>你決定<br/>",
+            "type":2,//0:conversation, 1:transition , 2: popup action
+            "background":"bg-01.jpg",
+            "answers":[{
+                "choice_text": "繼續飲",
+                "next":13
+            },{
+                "choice_text": "離開",
+                "next":14
+            }]
+    
+        },
+        {
+            "order":13,
+            "text":"房...",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":15,// for transition only, -1 means last screen
+            "background":"bg-02.jpg"
+    
+        },
+        {
+            "order":14,
+            "text":"記住任何時間都要<br/>保持清醒啊！",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-01.jpg",
+            "popupImage":[2],
+            "fadeOut":7000
+        },
+        {
+            "order":15,
+            "text":"第二朝，你不省人事<br/>斷晒片，唔記得發生咩事<br/>發現袋内嘅銀包電話俾人<br/>偷咗而且個客已經走埋<br/>知多啲！<br/>可以點樣保護自己？",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-02.jpg",
+            "popupImage":[2],
+            "fadeOut":7000
+    
+        },
+        {
+            "order":16,
+            "text":"扮咩上菜，都係想加錢啫，我加多$1000去開房",
+            "type":0,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "嗯...一次咁多啦！",
+                "next":18
+            },{
+                "choice_text": "講咩啊你，加錢唔係大晒㗎！",
+                "next":17
+            }]
+    
+        },
+        {
+            "order":17,
+            "text":"不歡而散，完",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-15.jpg",
+            "popupImage":[3,19,20]
+    
+        },
+        {
+            "order":18,
+            "text":"房...",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":19,// for transition only
+            "background":"bg-02.jpg"
+    
+        },     
+        {
+            "order":19,
+            "text":"唔用套啦，我想舒服啲!<i class='emoji'>😜</i>",
+            "type":0,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "嗯...好啦！<i class='emoji'>😰</i>",
+                "next":20
+            },{
+                "choice_text": "唔戴唔得喎！",
+                "next":21      
+            },{
+                "choice_text": "<i class='emoji'>😊</i>",
+                "next":23     
+            }]
+    
+        },  
+        {
+            "order":20,
+            "text":"過一段時間後唔舒服",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-13.jpg",
+            "link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+            "fadeInMsg":"知多d！<br/>健康d！"
+    
+        },
+        {
+            "order":21,
+            "text":"加$?",
+            "type":0,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "嗯...一次咁多啦！",
+                "next":20
+            },{
+                "choice_text": "加錢都唔得！",
+                "next":22
+            }]
+    
+        },
+        {
+            "order":22,
+            "text":"知多d!<br/>遇到咁嘅情況唔知點算好？<br/>可以學下佢點回應",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-02.jpg",
+            "popupImage":[1]
+    
+        },
+        {
+            "order":23,
+            "text":"對方以為你同意，過一段時間後唔舒服",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only, -1 means last screen
+            "background":"bg-02.jpg",
+            "link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+            "fadeInMsg":"知多d！<br/>健康d！"
+    
+        },
+        {
+            "order":24,
+            "text":"準備搞嘢...",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":25,// for transition only
+            "background":"bg-06.jpg"
+    
+        },   
+        {
+            "order":25,
+            "text":"準備搞嘢...",
+            "type":0,//0:conversation, 1:transition
+            "transition_next":26,// for transition only
+            "background":"bg-06.jpg"
+    
+        },
+        {
+            "order":26,
+            "text":"唔使啦，唔好咁麻煩",
+            "type":0,//0:conversation, 1:transition
+            "pre_conversation":[{
+                "from":1,
+                "text":"我出去洗洗手轉頭返"
+            }],
+            "answers":[{
+                "choice_text": "乜你咁心急㗎！",
+                "next":27
+            },{
+                "choice_text": "嗯...好啦！",
+                "next":33
+            }]
+        },
+        {
+            "order":27,
+            "text":"戴套前，發現用開嘅dom 唔啱size，你：",
+            "type":2,//0:conversation, 1:transition , 2: popup action
+            "background":"bg-18.jpg",
+            "answers":[{
+                "choice_text": "直接話佢知唔啱ize,幫佢用手打出嚟",
+                "next":28
+            },{
+                "choice_text": "搏一搏照用",
+                "next":29
+            },{
+                "choice_text": "索性唔用，叫個客外射",
+                "next":32         
+            }]
+    
+        },
+        {
+            "order":28,
+            "text":"客勉強答應，完成交易",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only
+            "text_link":"https://www.afrohealth.org.hk/what-is-venereal-disease",
+            "background":"bg-18.jpg"
+    
+        },
+        {
+            "order":29,
+            "text":"做到中間穿咗，你想換套先繼續，客格硬嚟，你大嗌但客冇理繼續至完事，你：",
+            "type":2,//0:conversation, 1:transition
+            "answers":[{
+                "choice_text": "報警",
+                "next":30
+            },{
+                "choice_text": "覺得自己都有責任，息事寧人算數",
+                "next":31
+            }],
+            "background":"bg-17.jpg"
+    
+        },
+        {
+            "order":30,
+            "text":"性暴力/强姦刑事罪行條例",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only
+            "background":"bg-17.jpg",
+            "text_link":"https://www.afrohealth.org.hk/what-is-venereal-disease",
+    
+        },
+        {
+            "order":31,
+            "text":"意外懷孕/事後藥/性病",
+            "type":1,//0:conversation, 1:transition
+            "transition_next":-1,// for transition only
+            "background":"bg-17.jpg",
+            "text_link":"https://www.afrohealth.org.hk/what-is-venereal-disease",
+    
+        },
+        {
+            "order":32,
+            "text":"知多啲！外射真係唔會出事？",
+            "type":1,//0:conversation, 1:transition, 2:popup action, 3: popup with next btn
+            "transition_next":-1,// for transition only
+            "background":"bg-18.jpg",
+            "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease"
+            
+
+    
+        },
+           
     ]
 },{
     id:4,
@@ -1039,6 +1405,11 @@ function updateScenario(scenario,stage){
                     }
                 }
                 $("#game_conversation").append("<div class='question'><div>"+stageObj.text+"</div></div>");
+                if(stageObj.next){
+                    setTimeout(function(){
+                        updateScenario(scenario,stageObj.next);
+                    },response)
+                }
                 for(var i=0;i<stageObj.answers.length;i++){
                     if(stageObj.answers[i].next){//general
                         if(stageObj.answers[i].display_text){
