@@ -258,7 +258,7 @@ var scenarios = [
         },
         {
             "order":1,
-            "text":"Yr Place...",
+            "text":"ur place...",
             "type":1,//0:conversation, 1:transition
             "transition_next":5,// for transition only
             "background":"bg-02.jpg"
