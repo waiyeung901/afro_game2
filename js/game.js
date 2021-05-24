@@ -283,7 +283,7 @@ var scenarios = [
 
         {
             "order":4,
-            "text":"客：有咩plan?",
+            "text":"有咩plan?",
             "type":0,//0:conversation, 1:transition
             "answers":[{
                 "choice_text": "半套",
@@ -844,7 +844,7 @@ var scenarios = [
             "text":"有冇其他服務？",
             "type":0,//0:conversation, 1:transition
             "answers":[{
-                "choice_text": "你想玩咩？:)",
+                "choice_text": "你想玩咩？😁",
                 "next":2
             },{
                 "choice_text": "我哋唔可以係呢度做呢啲嘢㗎！",
