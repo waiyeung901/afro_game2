@@ -223,7 +223,6 @@ var scenarios = [{
                 "transition_next": -1, // for transition only, -1 means last screen
                 "background": "bg-01.jpg",
                 "popupImage": [2],
-                "fadeOut": 7000
             },
             {
                 "order": 14,
@@ -439,7 +438,8 @@ var scenarios = [{
                 "transition_next": -1, // for transition only
                 "popupImage": [10],
                 "popup_next": 19,
-                "background": "bg-13.jpg"
+
+                "fadeOut": 1
 
             },
             {
@@ -992,7 +992,6 @@ var scenarios = [{
                 "transition_next": -1, // for transition only, -1 means last screen
                 "background": "bg-01.jpg",
                 "popupImage": [2],
-                "fadeOut": 7000
             },
             {
                 "order": 15,
@@ -1103,7 +1102,7 @@ var scenarios = [{
             {
                 "order": 25,
                 "text": "準備搞嘢...",
-                "type": 0, //0:conversation, 1:transition
+                "type": 1, //0:conversation, 1:transition
                 "transition_next": 26, // for transition only
                 "background": "bg-06.jpg"
 
@@ -1130,7 +1129,7 @@ var scenarios = [{
                 "type": 2, //0:conversation, 1:transition , 2: popup action
                 "background": "bg-18.jpg",
                 "answers": [{
-                    "choice_text": "直接話佢知唔啱ize,幫佢用手打出嚟",
+                    "choice_text": "直接話佢知唔啱size,幫佢用手打出嚟",
                     "next": 28
                 }, {
                     "choice_text": "搏一搏照用",
@@ -1188,6 +1187,37 @@ var scenarios = [{
                 "type": 1, //0:conversation, 1:transition, 2:popup action, 3: popup with next btn
                 "transition_next": -1, // for transition only
                 "background": "bg-18.jpg",
+                "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease"
+
+
+
+            },
+            {
+                "order": 33,
+                "text": "吓？都係滑嘅嘢啫，點會啊，嚟啦...",
+                "type": 0, //0:conversation, 1:transition, 2:popup action, 3: popup with next btn
+                "pre_conversation": [{
+                    "from": 1,
+                    "text": "唔得，手上面仲有按摩油會整穿個套"
+                }],
+                "answers": [{
+                    "choice_text": "又好似係喎...",
+                    "next": 27
+                }, {
+                    "choice_text": "梗係唔係啦！滑嘢都有好多隻！",
+                    "next": 34
+                }],
+                "background": "bg-06.jpg",
+
+
+
+            },
+            {
+                "order": 34,
+                "text": "客：哦，原來係咁嘅....",
+                "type": 1, //0:conversation, 1:transition, 2:popup action, 3: popup with next btn
+                "transition_next": -1,
+                "background": "bg-06.jpg",
                 "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease"
 
 
@@ -1345,7 +1375,7 @@ $(function() {
     $("#start_btn").click(function() {
         $("#start_screen").hide();
         //showIntro();
-        updateScenario(0, 0);
+        updateScenario(3, 0);
     })
 
 
@@ -1469,15 +1499,20 @@ function updateScenario(scenario, stage) {
             $("#transition").css("display", "flex");
 
             if (stageObj.next_btn) {
-                $("#transition").append("<div class='next_btn object' data-next=" + stageObj.next_btn + ">NEXT</div>")
-                $(".next_btn").click(function() {
-                    $(".next_btn").css("pointer-events", "none");
-                    $(this).hide();
-                    var next = $(this).data("next");
-                    setTimeout(function() {
-                        updateScenario(scenario, next);
-                    }, response)
-                })
+                $("#transition").append("<div class='next_btn object fadeObject' data-next=" + stageObj.next_btn + "></div>")
+                $(".next_btn").show();
+                setTimeout(function() {
+                    $(".next_btn").addClass("fadedIn")
+                    $(".next_btn").click(function() {
+                        $(".next_btn").css("pointer-events", "none");
+                        $(this).hide();
+                        var next = $(this).data("next");
+                        setTimeout(function() {
+                            updateScenario(scenario, next);
+                        }, response)
+                    })
+                }, 100)
+
             }
 
             setTimeout(function() {
@@ -1502,6 +1537,13 @@ function updateScenario(scenario, stage) {
                                 $("#replay_btn").addClass("fadedIn");
                             }, 100)
 
+                        } else if (stageObj.text_link && stageObj.text) {
+                            $("#replay_btn").show();
+                            setTimeout(function() {
+                                $(".fadeInText").addClass("fadedIn");
+
+                                $("#replay_btn").addClass("fadedIn");
+                            }, 100)
                         } else if (stageObj.popupImage && stageObj.popupImage.length > 0) {
                             $("#popupImage_container").show();
                             for (i = stageObj.popupImage.length - 1; i >= 0; i--) {
@@ -1514,22 +1556,27 @@ function updateScenario(scenario, stage) {
                                 }, 100)
                             }
                             if (stageObj.popup_next) {
-                                $("#popupImage_container").append("<div class='next_btn object' data-next=" + stageObj.popup_next + ">NEXT</div>")
-                                $(".next_btn").click(function() {
-                                    $(".next_btn").css("pointer-events", "none");
-                                    var next = $(this).data("next");
-                                    setTimeout(function() {
-                                        $("#popupImage_container").removeClass("fadedIn");
+                                $("#popupImage_container").append("<div class='next_btn object fadeObject' data-next=" + stageObj.popup_next + "></div>")
+                                $(".next_btn").show();
+                                setTimeout(function() {
+                                    $(".next_btn").addClass("fadedIn")
+                                    $(".next_btn").click(function() {
+                                        $(".next_btn").css("pointer-events", "none");
+                                        var next = $(this).data("next");
                                         setTimeout(function() {
-                                            $("#popupImage_container").hide();
-                                        }, 500)
-                                        updateScenario(scenario, next);
-                                    }, response)
+                                            $("#popupImage_container").removeClass("fadedIn");
+                                            setTimeout(function() {
+                                                $("#popupImage_container").hide();
+                                            }, 500)
+                                            updateScenario(scenario, next);
+                                        }, response)
+                                    })
                                 })
+
                             }
 
                             setTimeout(function() {
-                                if ($(".popupImage").length == 1) {
+                                if ($(".popupImage").length == 1 && !stageObj.popup_next) {
                                     $("#replay_btn").show();
                                     setTimeout(function() {
                                         $("#replay_btn").addClass("fadedIn");

@@ -22,7 +22,7 @@ body {
 }
 
 a {
-    color: #7E4C0A;
+    color: #fff;
 }
 
 img {
@@ -448,20 +448,11 @@ div#game_conversation_top img {
     background-position: center;
 }
 
-.next_btn,
 #replay_btn {
     left: 0;
     right: 0;
     margin: 0 auto;
     bottom: 0;
-}
-
-.next_btn {
-    background-color: #fff;
-    padding: 10px 20px;
-    color: #000;
-    width: 100px;
-    text-align: center;
 }
 
 #replay_btn {
@@ -470,7 +461,8 @@ div#game_conversation_top img {
     background-image: url("../src/assets/btn-restart.png");
 }
 
-#popup_next_btn {
+#popup_next_btn,
+.next_btn {
     width: 44px;
     height: 44px;
     background-image: url(../src/assets/btn-right.png);
@@ -481,7 +473,8 @@ div#game_conversation_top img {
 }
 
 #replay_btn,
-#popup_next_btn {
+#popup_next_btn,
+.next_btn {
     display: none;
     opacity: 0;
     z-index: 101;
