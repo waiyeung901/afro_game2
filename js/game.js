@@ -1345,7 +1345,7 @@ $(function() {
     $("#start_btn").click(function() {
         $("#start_screen").hide();
         //showIntro();
-        updateScenario(1, 11);
+        updateScenario(0, 0);
     })
 
 
