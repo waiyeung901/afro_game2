@@ -1,61 +1,65 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=480 maximum-scale=5.0"> 
-        <link rel="stylesheet" type="text/css" href="css/game2.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="js/game.js"></script>
-    </head>
-    <body>
-        <div class="flex">
-            <div id="start_screen" class="page">
-                <div id="start_desc" class="object center">
-                    你常使用通訊軟件結交新朋友嗎？<br/>
-                    此遊戲讓你體驗網上交友的吸引之處，不過同時存在潛在風險。<br>
-                    一起來試玩吧！每個場景都有不同選擇，<br/>
-                    主角的結局就在你掌握之中。<br/>
-                    立即開始吧
-                </div>
-                <div id="start_btn" class="object center" ></div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=480 maximum-scale=5.0">
+    <link rel="stylesheet" type="text/css" href="css/game2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/game.js"></script>
+</head>
+
+<body>
+    <div class="flex">
+        <div id="start_screen" class="page">
+            <div id="start_desc" class="object center">
+                你常使用通訊軟件結交新朋友嗎？<br/> 此遊戲讓你體驗網上交友的吸引之處，不過同時存在潛在風險。
+                <br> 一起來試玩吧！每個場景都有不同選擇，
+                <br/> 主角的結局就在你掌握之中。
+                <br/> 立即開始吧
             </div>
-            <div id="game_screen" class="page">
+            <div id="start_btn" class="object center"></div>
+        </div>
+        <div id="game_screen" class="page">
 
-                <div id="game_screen_wrapper">
-                    <div id="transition" class="page flex fadeObject">
-                        <div id="transition_text"></div>
-                    </div>
-                    <div id="game_conversation_top" class="object">
-                        <div>
-                            <img id="conversation_icon" src="src/assets/icon-pic.png"/>
-                            <img id="conversation_name" src="src/assets/name.png"/>
-                            <img id="conversation_more" src="src/assets/icon-menu.png"/>
-                        </div>
-                        
-
-                    </div>
-                    <div id="game_conversation" class="object">
-
-                    </div>
-                    <div id="game_conversation_input" class="object">
-                        <div>
-                            <div id="input_field">
-                                <img id="input_emoji" src="src/assets/icon-emoji.png"/>
-                            </div>
-                            <img id="input_mic" src="src/assets/icon-mic.png"/>
-                        </div>
-
-                    </div>
-                    <div id="game_conversation_choices" class="object">
-                        <div>
-                            <div></div>
-                        </div>
-                    </div>
-                    <div id="popupImage_container" class="page fadeObject"></div>
-                    
+            <div id="game_screen_wrapper">
+                <div id="transition" class="page flex fadeObject">
+                    <div id="transition_text"></div>
                 </div>
+                <div id="game_conversation_top" class="object">
+                    <div>
+                        <img id="conversation_icon" src="src/assets/icon-pic.png" />
+                        <img id="conversation_name" src="src/assets/name.png" />
+                        <img id="conversation_more" src="src/assets/icon-menu.png" />
+                    </div>
+
+
+                </div>
+                <div id="game_conversation" class="object">
+
+                </div>
+                <div id="game_conversation_input" class="object">
+                    <div>
+                        <div id="input_field">
+                            <img id="input_emoji" src="src/assets/icon-emoji.png" />
+                        </div>
+                        <img id="input_mic" src="src/assets/icon-mic.png" />
+                    </div>
+
+                </div>
+                <div id="game_conversation_choices" class="object">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div id="popupImage_container" class="page fadeObject"></div>
+                <a href="game2-popup.html">
+                    <div id="replay_btn" class="fadeObject object"></div>
+                </a>
+                <div id="popup_next_btn" class="fadeObject object"></div>
             </div>
+        </div>
 
 
-    </body>
+</body>
 
 </html>

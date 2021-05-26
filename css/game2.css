@@ -1,19 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Noto Sans HK");
-html,body{
-    overflow:hidden;
+html,
+body {
+    overflow: hidden;
 }
-body{
-    background-color:#000;
 
-    margin:0;
-    padding:0;
-    border:0;
+body {
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    border: 0;
     /*background-image: url(../src/Game1-design1/render/game1-01.jpg);*/
     background-size: cover;
-    width:100%;
-    height:100%;
-    background-color:#000;
-    color:#7E4C0A;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #7E4C0A;
     font-family: 'Noto Sans HK'!important;
     font-weight: bold;
     font-style: normal;
@@ -21,40 +22,46 @@ body{
 }
 
 a {
-    color:#7E4C0A;
+    color: #7E4C0A;
 }
 
-img{
+img {
     max-width: 100%;
     max-height: 100%;
 }
-.page{
-    width:100%;
-    height:100%;
+
+.page {
+    width: 100%;
+    height: 100%;
     display: block;
     position: absolute;
-    background-color:#000;
+    background-color: #000;
 }
-.object{
-    position:absolute;
+
+.object {
+    position: absolute;
 }
-.center{
+
+.center {
     margin: 0 auto;
     left: 0;
     right: 0;
 }
-#start_screen{
-    z-index:2;
+
+#start_screen {
+    z-index: 2;
     background-image: url(../src/assets/start-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
-#start_title{
-    width:258px;
-    top:29px;
+
+#start_title {
+    width: 258px;
+    top: 29px;
 }
-#start_desc{
+
+#start_desc {
     background-color: #fff;
     opacity: 0.75;
     width: 70%;
@@ -64,55 +71,61 @@ img{
     text-align: center;
     line-height: 24px;
 }
-#start_background{
-    width:480px;
-    bottom:0;
-    
+
+#start_background {
+    width: 480px;
+    bottom: 0;
 }
-#start_btn{
+
+#start_btn {
     width: 282px;
     top: 530px;
-    height:100px;
+    height: 100px;
     background-image: url(../src/assets/start.png);
     background-size: cover;
-    cursor:pointer;
+    cursor: pointer;
 }
-#start_btn:hover{
+
+#start_btn:hover {
     background-image: url(../src/assets/start-on.png);
 }
-.question div, .answer div{
+
+.question div,
+.answer div {
     display: inline-block;
     padding: 5px 20px;
 }
-.question div{
-    margin-left:10px;
-    margin-bottom:10px;
+
+.question div {
+    margin-left: 10px;
+    margin-bottom: 10px;
     background-color: #31DBE6;
     border-radius: 10px 10px 10px 0;
-
 }
-.answer div{
+
+.answer div {
     background-color: #F798A0;
-    margin-right:10px;
-    margin-bottom:10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     float: right;
     border-radius: 10px 10px 0px 10px;
 }
-.flex{
-    height:100%;
+
+.flex {
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     //margin-left: 10%;
     //margin-right: 10%;
 }
-#choices{
-    height:390px;
-    border-top: 2px solid #fff;
-  
-}
-.choice {
 
+#choices {
+    height: 390px;
+    border-top: 2px solid #fff;
+}
+
+.choice {
     background-color: #fff;
     display: block;
     text-align: center;
@@ -130,47 +143,57 @@ img{
     margin: 0px
 }
 
-#result{
-    display:none;
+#result {
+    display: none;
 }
-#choices_container{
-    width:100%;
+
+#choices_container {
+    width: 100%;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0px 0px 5px 2px rgb(206 122 0 / 70%);
 }
-#result{
-    display:none;
+
+#result {
+    display: none;
     background-color: rgba(0, 0, 0, 0.5);
 }
-.clickDisabled{
+
+.clickDisabled {
     pointer-events: none;
 }
-#questionImageContainer,#resultImageContainer{
+
+#questionImageContainer,
+#resultImageContainer {
     text-align: center;
     margin-bottom: 2%;
 }
-#questionImage,#resultImage{
-    width:60%;
 
+#questionImage,
+#resultImage {
+    width: 60%;
 }
+
 #progress {
     width: 100%;
     position: absolute;
     text-align: center;
 }
+
 .dot {
     height: 10px;
     width: 10px;
     background-color: #DEC29A;
     border-radius: 50%;
     display: inline-block;
-    margin-right:10px;
+    margin-right: 10px;
 }
-.active{
+
+.active {
     background-color: #DE8C85;
 }
-#progress_result_text{
+
+#progress_result_text {
     width: 45px;
     border-radius: 50px;
     background-color: #dec29a;
@@ -179,59 +202,70 @@ img{
     padding: 6px 0px;
     font-weight: unset;
 }
-#resultContent > div{
+
+#resultContent>div {
     background-color: #fff;
     border-radius: 10px;
 }
-#result_title_text{
+
+#result_title_text {
     width: 84px;
     top: -25px;
     position: relative;
     left: 5px;
 }
-#resultText{
+
+#resultText {
     margin: 25px;
     line-height: 25px;
     font-size: 22px;
 }
-#riskText{
+
+#riskText {
     text-align: center;
-    font-size:32px;
+    font-size: 32px;
 }
-#riskLevel{
+
+#riskLevel {
     font-size: 64px;
 }
-.low{
-    color:#B2D891;
+
+.low {
+    color: #B2D891;
 }
-.mid{
-    color:#DDC357;
+
+.mid {
+    color: #DDC357;
 }
-.high{
-    color:#DE8C85;
+
+.high {
+    color: #DE8C85;
 }
-#transition{
-    display:none;
-    z-index:99;
+
+#transition {
+    display: none;
+    z-index: 99;
     background-repeat: no-repeat;
-    color:#fff;
+    color: #fff;
     font-size: 28px;
     background-size: cover;
     background-position: center;
     opacity: 0;
 }
-#game_conversation{
+
+#game_conversation {
     background-repeat: no-repeat;
     font-size: 14px;
     background-size: cover;
-    width:100%;
+    width: 100%;
     height: 70%;
-    top:10%;
+    top: 10%;
     background-image: url('../src/assets/msg-bg.jpg');
-    padding-top:20px;
-    color:#000;
+    padding-top: 20px;
+    color: #000;
 }
-#game_conversation_top div{
+
+#game_conversation_top div {
     height: 50%;
     width: 100%;
     position: absolute;
@@ -239,44 +273,50 @@ img{
     top: 0;
     bottom: 0;
 }
-div#game_conversation_top img {
 
+div#game_conversation_top img {
     height: 100%;
 }
-#game_conversation_top, #game_conversation_choices{
-    width:100%;
-    height:10%;
-    
+
+#game_conversation_top,
+#game_conversation_choices {
+    width: 100%;
+    height: 10%;
 }
-#game_conversation_top{
+
+#game_conversation_top {
     background-color: #F798A0;
 }
-#game_conversation_choices{
+
+#game_conversation_choices {
     overflow-x: auto;
-    top:90%;
+    top: 90%;
     background-color: #6E35A3;
-    color:#000;
-    
+    color: #000;
 }
-#game_conversation_choices > div{
+
+#game_conversation_choices>div {
     margin-left: 20px;
     margin-right: 20px;
-    overflow:hidden;
+    overflow: hidden;
 }
-#game_conversation_choices > div > div{
+
+#game_conversation_choices>div>div {
     height: 100%;
     display: flex;
     align-items: center;
     overflow-x: auto;
     //justify-content: center;
 }
-#game_conversation_input{
-    width:100%;
-    height:10%;
-    top:80%;
+
+#game_conversation_input {
+    width: 100%;
+    height: 10%;
+    top: 80%;
     background-color: #fff;
 }
-#input_field{
+
+#input_field {
     height: 100%;
     width: 80%;
     background-color: #EFEFEF;
@@ -285,7 +325,8 @@ div#game_conversation_top img {
     border-radius: 10px;
     position: relative;
 }
-#input_emoji{
+
+#input_emoji {
     position: absolute;
     height: 70%;
     left: 10px;
@@ -293,11 +334,13 @@ div#game_conversation_top img {
     bottom: 0;
     margin: auto;
 }
-#input_mic{
-    float:right;
+
+#input_mic {
+    float: right;
     margin-right: 10px;
 }
-#game_conversation_input > div{
+
+#game_conversation_input>div {
     height: 70%;
     width: 100%;
     position: absolute;
@@ -306,9 +349,9 @@ div#game_conversation_top img {
     bottom: 0;
 }
 
-.choices{
+.choices {
     font-size: 14px;
-    display:inline-table;
+    display: inline-table;
     background-color: #fff;
     padding: 0 10px;
     cursor: pointer;
@@ -319,86 +362,130 @@ div#game_conversation_top img {
     white-space: nowrap;
 }
 
-.choices:hover{
+.choices:hover {
     background-color: #efefef;
 }
 
-.fadeInText{
-    opacity:0;
+.fadeInText {
+    opacity: 0;
     text-align: center;
 }
-.fadeInText a{
+
+.fadeInText a {
     text-decoration: underline;
-    color:#fff;
+    color: #fff;
 }
-.fadedIn{
+
+.fadedIn {
     opacity: 1 !important;
 }
-#transition_text{
+
+#transition_text {
     background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
     padding: 30px;
-    width:70%;
+    width: 70%;
     border-radius: 10px;
 }
-.popupImage{
 
+.popupImage {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
-#popupImage_container{
-    display:none;
-    z-index: 100;
-    opacity:0;
 
+#popupImage_container {
+    display: none;
+    z-index: 100;
+    opacity: 0;
 }
-.fadeObject{
+
+.fadeObject {
     transition: opacity 0.5s ease;
 }
-.fadeOut{
+
+.fadeOut {
     opacity: 0 !important;
 }
-#transition_text .choices{
-    margin-top:10px;
+
+#transition_text .choices {
+    margin-top: 10px;
     display: block;
-    color:#000;
+    color: #000;
     white-space: normal;
 }
-.clearBoth{
+
+.clearBoth {
     clear: both;
 }
-#conversation_icon{
-    margin-left:10px;
+
+#conversation_icon {
+    margin-left: 10px;
 }
-#conversation_name{
-    margin-left:10px;
+
+#conversation_name {
+    margin-left: 10px;
 }
-#conversation_more{
-    float:right;
-    margin-right:10px;
+
+#conversation_more {
+    float: right;
+    margin-right: 10px;
 }
-.emoji{
+
+.emoji {
     font-size: 18px;
     font-style: normal;
 }
-.noBackground{
+
+.noBackground {
     background-image: none !important;
 }
-.wrapperWithBackground{
+
+.wrapperWithBackground {
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
-.next_btn{
-    padding:10px 20px;
-    background-color: #fff;
-    color:#000;
+
+.next_btn,
+#replay_btn {
     left: 0;
     right: 0;
     margin: 0 auto;
+    bottom: 0;
+}
+
+.next_btn {
+    background-color: #fff;
+    padding: 10px 20px;
+    color: #000;
     width: 100px;
     text-align: center;
-    bottom: 0px;
+}
+
+#replay_btn {
+    width: 272px;
+    height: 88px;
+    background-image: url("../src/assets/btn-restart.png");
+}
+
+#popup_next_btn {
+    width: 44px;
+    height: 44px;
+    background-image: url(../src/assets/btn-right.png);
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 0;
+}
+
+#replay_btn,
+#popup_next_btn {
+    display: none;
+    opacity: 0;
+    z-index: 101;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
