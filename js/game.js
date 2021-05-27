@@ -1145,7 +1145,7 @@ var scenarios = [{
                 "text": "客勉強答應，完成交易",
                 "type": 1, //0:conversation, 1:transition
                 "transition_next": -1, // for transition only
-                "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+                "text_link": "https://www.afrohealth.org.hk/safe-sex/condom-types",
                 "background": "bg-18.jpg"
 
             },
