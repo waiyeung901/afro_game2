@@ -641,7 +641,7 @@ var scenarios = [{
                 "type": 1, //0:conversation, 1:transition
                 "transition_next": -1, // for transition only
                 "background": "bg-20.jpg",
-                "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+                "text_link": "https://www.afrohealth.org.hk/safe-sex/lubricant",
 
             },
             {
