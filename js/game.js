@@ -254,7 +254,7 @@ var scenarios = [{
             },
             {
                 "order": 1,
-                "text": "ur place...",
+                "text": "客人家中...",
                 "type": 1, //0:conversation, 1:transition
                 "transition_next": 5, // for transition only
                 "background": "bg-02.jpg"
@@ -390,7 +390,7 @@ var scenarios = [{
             },
             {
                 "order": 13,
-                "text": "離開",
+                "text": "完事並離開",
                 "type": 1, //0:conversation, 1:transition
                 "transition_next": 15, // for transition only
                 "background": "bg-02.jpg"
@@ -448,7 +448,7 @@ var scenarios = [{
                 "type": 1, //0:conversation, 1:transition, 2:popup action, 3: popup with next btn
                 "transition_next": -1, // for transition only
                 "background": "bg-13.jpg",
-                "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease"
+                "text_link": "https://www.afrohealth.org.hk/safe-sex/condom-types"
 
 
 
@@ -504,7 +504,7 @@ var scenarios = [{
                 "type": 1, //0:conversation, 1:transition
                 "transition_next": -1, // for transition only
                 "background": "bg-22.jpg",
-                "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+                "text_link": "https://www.afrohealth.org.hk/contraception/accidental-pregnancy",
 
             },
             {
@@ -526,7 +526,7 @@ var scenarios = [{
                 "text": "客人接受，完成交易",
                 "type": 1, //0:conversation, 1:transition
                 "transition_next": -1, // for transition only
-                "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+                "text_link": "https://www.afrohealth.org.hk/hiv/aids-trivia",
                 "background": "bg-22.jpg"
 
             },
@@ -610,11 +610,11 @@ var scenarios = [{
             },
             {
                 "order": 33,
-                "text": "冷知識Q19",
+                "text": "知多d!",
                 "type": 1, //0:conversation, 1:transition
                 "transition_next": -1, // for transition only
                 "background": "bg-20.jpg",
-                "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+                "text_link": "https://www.afrohealth.org.hk/hiv/aids-trivia",
 
             },
             {
@@ -637,7 +637,7 @@ var scenarios = [{
             },
             {
                 "order": 36,
-                "text": "潤滑劑",
+                "text": "知多D!",
                 "type": 1, //0:conversation, 1:transition
                 "transition_next": -1, // for transition only
                 "background": "bg-20.jpg",
@@ -797,7 +797,7 @@ var scenarios = [{
                 "type": 1, //0:conversation, 1:transition
                 "transition_next": -1, // for transition only, -1 means last screen
                 "background": "bg-17.jpg",
-                "link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+                "link": "https://www.afrohealth.org.hk/safe-sex/pitfalls-of-condom-use",
                 "fadeInMsg": "知多d！"
 
             },
@@ -821,7 +821,7 @@ var scenarios = [{
                 "type": 1, //0:conversation, 1:transition
                 "transition_next": -1, // for transition only, -1 means last screen
                 "background": "bg-17.jpg",
-                "link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+                "link": "https://www.afrohealth.org.hk/safe-sex/pitfalls-of-condom-use",
                 "fadeInMsg": "知多d！"
 
             },
@@ -928,7 +928,7 @@ var scenarios = [{
             },
             {
                 "order": 9,
-                "text": "唔好啦，你怕咪之後啷下個口殺菌囉！",
+                "text": "唔好啦，用口啦！你怕咪之後啷下個口殺菌囉！",
                 "type": 0, //0:conversation, 1:transition
                 "answers": [{
                     "choice_text": "都可以嘅...",
@@ -942,11 +942,11 @@ var scenarios = [{
             },
             {
                 "order": 10,
-                "text": "冷知識Q19",
+                "text": "知多D!",
                 "type": 1, //0:conversation, 1:transition
                 "transition_next": -1, // for transition only
                 "background": "bg-06.jpg",
-                "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+                "text_link": "https://www.afrohealth.org.hk/hiv/aids-trivia",
 
             },
             {
@@ -1120,6 +1120,9 @@ var scenarios = [{
                     "next": 27
                 }, {
                     "choice_text": "嗯...好啦！",
+                    "next": 27
+                }, {
+                    "choice_text": "唔得，手上面仲有按摩油會整穿個套",
                     "next": 33
                 }]
             },
@@ -1178,7 +1181,7 @@ var scenarios = [{
                 "type": 1, //0:conversation, 1:transition
                 "transition_next": -1, // for transition only
                 "background": "bg-17.jpg",
-                "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+                "text_link": "https://www.afrohealth.org.hk/contraception/accidental-pregnancy",
 
             },
             {
@@ -1187,7 +1190,7 @@ var scenarios = [{
                 "type": 1, //0:conversation, 1:transition, 2:popup action, 3: popup with next btn
                 "transition_next": -1, // for transition only
                 "background": "bg-18.jpg",
-                "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease"
+                "text_link": "https://www.afrohealth.org.hk/contraception/urban-myths-on-alternative-contraceptive-methods"
 
 
 
@@ -1196,10 +1199,10 @@ var scenarios = [{
                 "order": 33,
                 "text": "吓？都係滑嘅嘢啫，點會啊，嚟啦...",
                 "type": 0, //0:conversation, 1:transition, 2:popup action, 3: popup with next btn
-                "pre_conversation": [{
+                /*"pre_conversation": [{
                     "from": 1,
                     "text": "唔得，手上面仲有按摩油會整穿個套"
-                }],
+                }],*/
                 "answers": [{
                     "choice_text": "又好似係喎...",
                     "next": 27
@@ -1215,10 +1218,20 @@ var scenarios = [{
             {
                 "order": 34,
                 "text": "客：哦，原來係咁嘅....",
+                "type": 0, //0:conversation, 1:transition, 2:popup action, 3: popup with next btn
+                "background": "bg-06.jpg",
+                "next": 35
+
+
+
+            },
+            {
+                "order": 35,
+                "text": "知多d潤滑劑有咩功用啦！",
                 "type": 1, //0:conversation, 1:transition, 2:popup action, 3: popup with next btn
                 "transition_next": -1,
                 "background": "bg-06.jpg",
-                "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease"
+                "text_link": "https://www.afrohealth.org.hk/safe-sex/lubricant"
 
 
 
@@ -1439,44 +1452,46 @@ function updateScenario(scenario, stage) {
                     setTimeout(function() {
                         updateScenario(scenario, stageObj.next);
                     }, response)
-                }
-                for (var i = 0; i < stageObj.answers.length; i++) {
-                    if (stageObj.answers[i].next) { //general
-                        if (stageObj.answers[i].display_text) {
-                            $("#game_conversation_choices > div > div").append("<div class='choices' data-display_text='" + stageObj.answers[i].display_text + "' data-next=" + stageObj.answers[i].next + ">" + stageObj.answers[i].choice_text + "</div>");
+                } else {
+                    for (var i = 0; i < stageObj.answers.length; i++) {
+                        if (stageObj.answers[i].next) { //general
+                            if (stageObj.answers[i].display_text) {
+                                $("#game_conversation_choices > div > div").append("<div class='choices' data-display_text='" + stageObj.answers[i].display_text + "' data-next=" + stageObj.answers[i].next + ">" + stageObj.answers[i].choice_text + "</div>");
+                            } else {
+                                $("#game_conversation_choices > div > div").append("<div class='choices' data-next=" + stageObj.answers[i].next + ">" + stageObj.answers[i].choice_text + "</div>");
+                            }
+
+                        } else if (stageObj.answers[i].next_scenario) { //intro
+                            $("#game_conversation_choices > div > div").append('<div class="choices" data-display_text="' + stageObj.answers[i].display_text + '" data-next_scenario=' + stageObj.answers[i].next_scenario + '>' + stageObj.answers[i].choice_text + '</div>');
+                        }
+                        adjustAnswersPosition();
+                    }
+                    $(".choices").css("pointer-events", "auto");
+                    $(".choices").click(function() {
+                        var next = $(this).data("next");
+                        var next_scenario = $(this).data("next_scenario");
+                        var display_text = $(this).data("display_text");
+                        $(".choices").css("pointer-events", "none");
+                        if (display_text) {
+                            $("#game_conversation").append("<div class='answer'><div>" + display_text + "</div></div><div class='clearBoth'></div>");
                         } else {
-                            $("#game_conversation_choices > div > div").append("<div class='choices' data-next=" + stageObj.answers[i].next + ">" + stageObj.answers[i].choice_text + "</div>");
+                            $("#game_conversation").append("<div class='answer'><div>" + $(this).html() + "</div></div><div class='clearBoth'></div>");
                         }
 
-                    } else if (stageObj.answers[i].next_scenario) { //intro
-                        $("#game_conversation_choices > div > div").append('<div class="choices" data-display_text="' + stageObj.answers[i].display_text + '" data-next_scenario=' + stageObj.answers[i].next_scenario + '>' + stageObj.answers[i].choice_text + '</div>');
-                    }
-                    adjustAnswersPosition();
+
+                        setTimeout(function() {
+                            if (next) { //general
+                                updateScenario(scenario, next);
+                            } else if (next_scenario) { //intro
+                                scenario = next_scenario;
+                                updateScenario(next_scenario, 0);
+                                console.log("Intro - chose scenario " + scenario);
+                            }
+                        }, response)
+
+                    })
                 }
-                $(".choices").css("pointer-events", "auto");
-                $(".choices").click(function() {
-                    var next = $(this).data("next");
-                    var next_scenario = $(this).data("next_scenario");
-                    var display_text = $(this).data("display_text");
-                    $(".choices").css("pointer-events", "none");
-                    if (display_text) {
-                        $("#game_conversation").append("<div class='answer'><div>" + display_text + "</div></div><div class='clearBoth'></div>");
-                    } else {
-                        $("#game_conversation").append("<div class='answer'><div>" + $(this).html() + "</div></div><div class='clearBoth'></div>");
-                    }
 
-
-                    setTimeout(function() {
-                        if (next) { //general
-                            updateScenario(scenario, next);
-                        } else if (next_scenario) { //intro
-                            scenario = next_scenario;
-                            updateScenario(next_scenario, 0);
-                            console.log("Intro - chose scenario " + scenario);
-                        }
-                    }, response)
-
-                })
             }, 100)
             break;
         case 1:
@@ -1513,6 +1528,8 @@ function updateScenario(scenario, stage) {
                     })
                 }, 100)
 
+            } else {
+                $(".next_btn").hide();
             }
 
             setTimeout(function() {
