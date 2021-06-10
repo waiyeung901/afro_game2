@@ -327,18 +327,14 @@ var scenarios = [{
             },
             {
                 "order": 7,
-                "text": "完事，客：你去沖涼先，<br/>你會：",
-                "type": 2, //0:conversation, 1:transition , 2: popup action
+                "text": "完事後",
+                "type": 1, //0:conversation, 1:transition , 2: popup action
+                "transition_next": 53,
                 "background": "bg-02.jpg",
-                "answers": [{
-                    "choice_text": "肯",
-                    "next": 12
-                }, {
-                    "choice_text": "唔肯",
-                    "next": 13
-                }]
+
 
             },
+
             {
                 "order": 8,
                 "text": "客唔肯，<br/>你會：",
@@ -824,6 +820,19 @@ var scenarios = [{
                 "link": "https://www.afrohealth.org.hk/safe-sex/pitfalls-of-condom-use",
                 "fadeInMsg": "知多d！"
 
+            },
+            {
+                "order": 53,
+                "text": "你去沖涼先",
+                "type": 0, //0:conversation, 1:transition
+                "background": "bg-02.jpg",
+                "answers": [{
+                    "choice_text": "肯",
+                    "next": 12
+                }, {
+                    "choice_text": "唔肯",
+                    "next": 13
+                }]
             },
         ]
     }, {
@@ -1341,11 +1350,11 @@ var scenarios = [{
             },
             {
                 "order": 10,
-                "text": "發現下面唔舒服<br/>知多d!<br/>唔建議係唔理想（如光線/空間不足，衞生條件較差）嘅地方進行性交易",
+                "text": "數日後，你發現下面唔舒服<br/>知多d!",
                 "type": 1, //0:conversation, 1:transition
                 "transition_next": -1, // for transition only, -1 means last screen
                 "background": "bg-07.jpg",
-                "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease"
+                "popupImage": [21],
 
             },
             {
@@ -1388,7 +1397,7 @@ $(function() {
     $("#start_btn").click(function() {
         $("#start_screen").hide();
         //showIntro();
-        updateScenario(0, 0);
+        updateScenario(2, 7);
     })
 
 
