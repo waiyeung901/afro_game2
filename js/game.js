@@ -677,7 +677,7 @@ var scenarios = [{
                     "choice_text": "又係喎！",
                     "next": 29
                 }, {
-                    "choice_text": "No",
+                    "choice_text": "唔得，唔係驚有冇 BB, 係驚有咩病啊！",
                     "next": 47
                 }]
 
@@ -752,20 +752,31 @@ var scenarios = [{
             },
             {
                 "order": 46,
-                "text": "你：唔可以，後面冇水㗎！<br/>你想痛死我咩，你都唔舒服啦！<br/>客接受...肛交完，準備陰道性交",
-                "type": 1, //0:conversation, 1:transition
-                "transition_next": 41, // for transition only
+                "pre_conversation": [{
+                    "from": 1,
+                    "text": "唔可以，後面冇水㗎！"
+                }, {
+                    "from": 1,
+                    "text": "你想痛死我咩，你都唔舒服啦！"
+                }],
+                "text": "咁好啦, 我都唔想整痛你",
+                "type": 0, //0:conversation, 1:transition
+                "next": 55, // for transition only
                 "background": "bg-19.jpg"
 
             },
             {
                 "order": 47,
-                "text": "你：唔得，唔係驚有冇 BB, 係驚有咩病啊！<br/>客：我好乾淨㗎，冇病嘅<br/>你：冇樣睇㗎！大家都唔知大家有冇事，我慣咗個個客都要戴㗎，大家安心啲！<br/>客聽完乖乖戴套...",
-                "type": 1, //0:conversation, 1:transition
-                "transition_next": 48, // for transition only
+                "text": "我好乾淨㗎，冇病嘅",
+                "type": 0, //0:conversation, 1:transition
+                "answers": [{
+                    "choice_text": "冇樣睇㗎！大家都唔知大家有冇事，我慣咗個個客都要戴㗎，大家安心啲！",
+                    "next": 54
+                }],
                 "background": "bg-18.jpg"
 
             },
+
             {
                 "order": 48,
                 "text": "",
@@ -833,6 +844,22 @@ var scenarios = [{
                     "choice_text": "唔肯",
                     "next": 13
                 }]
+            },
+            {
+                "order": 54,
+                "text": "客聽完乖乖戴套...",
+                "type": 1, //0:conversation, 1:transition
+                "transition_next": 48, // for transition only
+                "background": "bg-18.jpg"
+
+            },
+            {
+                "order": 55,
+                "text": "肛交完, 準備陰道性交",
+                "type": 1, //0:conversation, 1:transition
+                "transition_next": 41, // for transition only
+                "background": "bg-19.jpg"
+
             },
         ]
     }, {
@@ -1655,6 +1682,7 @@ function updateScenario(scenario, stage) {
             }
             $(".choices").css("pointer-events", "auto");
             $(".choices").click(function() {
+                $("#game_conversation").html("");
                 $(".choices").css("pointer-events", "none");
                 var next = $(this).data("next");
                 setTimeout(function() {
