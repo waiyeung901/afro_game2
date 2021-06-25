@@ -569,14 +569,10 @@ var scenarios = [{
             },
             {
                 "order": 31,
-                "text": "唔好啦，你怕咪之後啷下個口殺菌囉！",
+                "text": "吓...咁我點算啊？",
                 "pre_conversation": [{
                         "from": 1,
                         "text": "好痛吖，唔搞喇！"
-                    },
-                    {
-                        "from": 0,
-                        "text": "吓...咁我點算啊？"
                     }
                 ],
                 "type": 0, //0:conversation, 1:transition
@@ -590,10 +586,11 @@ var scenarios = [{
                 "background": "bg-20.jpg"
 
             },
+
             {
                 "order": 32,
-                "text": "客：唔好啦，你怕咪之後啷下個口殺菌囉！<br/>你：",
-                "type": 2, //0:conversation, 1:transition
+                "text": "唔好啦，你怕咪之後啷下個口殺菌囉！",
+                "type": 0, //0:conversation, 1:transition
                 "answers": [{
                     "choice_text": "都可以嘅...",
                     "next": 17
@@ -723,7 +720,7 @@ var scenarios = [{
                 "type": 0, //0:conversation, 1:transition
                 "answers": [{
                     "choice_text": "嗯...一次咁多啦！",
-                    "next": 5
+                    "next": 42
                 }, {
                     "choice_text": "加錢都唔得！",
                     "next": 44
@@ -957,7 +954,7 @@ var scenarios = [{
                 "type": 1, //0:conversation, 1:transition, 2:popup action, 3: popup with next btn
                 "transition_next": -1, // for transition only
                 "background": "bg-18.jpg",
-                "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease"
+                "text_link": "https://www.afrohealth.org.hk/safe-sex/condom-types"
 
 
 
