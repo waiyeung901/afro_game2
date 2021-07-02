@@ -463,8 +463,8 @@ div#game_conversation_top img {
 
 #popup_next_btn,
 .next_btn {
-    width: 44px;
-    height: 44px;
+    width: 66px;
+    height: 66px;
     background-image: url(../src/assets/btn-right.png);
     top: 0;
     bottom: 0;

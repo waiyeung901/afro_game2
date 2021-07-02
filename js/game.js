@@ -480,18 +480,18 @@ var scenarios = [{
                     "next": 23
                 }, {
                     "choice_text": "覺得自己都有責任，息事寧人算數",
-                    "next": 24
+                    "next": 56
                 }],
                 "background": "bg-22.jpg"
 
             },
             {
                 "order": 23,
-                "text": "性暴力/强姦刑事罪行條例",
+                "text": "了解多D有關強姦刑事罪行條例",
                 "type": 1, //0:conversation, 1:transition
                 "transition_next": -1, // for transition only
                 "background": "bg-22.jpg",
-                "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+                "text_link": "https://www.elegislation.gov.hk/hk/cap200!zh-Hant-HK",
 
             },
             {
@@ -589,7 +589,7 @@ var scenarios = [{
 
             {
                 "order": 32,
-                "text": "唔好啦，你怕咪之後啷下個口殺菌囉！",
+                "text": "唔好啦，用口啦！你怕咪之後啷下個口殺菌囉！",
                 "type": 0, //0:conversation, 1:transition
                 "answers": [{
                     "choice_text": "都可以嘅...",
@@ -858,6 +858,16 @@ var scenarios = [{
                 "background": "bg-19.jpg"
 
             },
+            {
+                "order": 56,
+                "text": "",
+                "type": 1, //0:conversation, 1:transition
+                "transition_next": -1, // for transition only, -1 means last screen
+                "popupImage": [22],
+                "background": "bg-22.jpg",
+                "fadeOut":1
+
+            },
         ]
     }, {
         id: 3,
@@ -874,13 +884,13 @@ var scenarios = [{
                 "text": "有冇其他服務？",
                 "type": 0, //0:conversation, 1:transition
                 "answers": [{
-                    "choice_text": "你想玩咩？😁",
+                    "choice_text": "你想玩咩？<i class='emoji'>😁</i>",
                     "next": 2
                 }, {
                     "choice_text": "我哋唔可以係呢度做呢啲嘢㗎！",
                     "next": 11
                 }, {
-                    "choice_text": "摸而不語",
+                    "choice_text": "摸而不語<i class='emoji'>😊</i>",
                     "next": 24
                 }],
                 "background": "bg-06.jpg"
@@ -1201,20 +1211,20 @@ var scenarios = [{
             },
             {
                 "order": 30,
-                "text": "性暴力/强姦刑事罪行條例",
+                "text": "了解多D有關強姦刑事罪行條例",
                 "type": 1, //0:conversation, 1:transition
                 "transition_next": -1, // for transition only
                 "background": "bg-17.jpg",
-                "text_link": "https://www.afrohealth.org.hk/what-is-venereal-disease",
+                "text_link": "https://www.elegislation.gov.hk/hk/cap200!zh-Hant-HK",
 
             },
             {
                 "order": 31,
-                "text": "意外懷孕/事後藥/性病",
+                "text": "了解更多有關安全套嘅陷阱!",
                 "type": 1, //0:conversation, 1:transition
                 "transition_next": -1, // for transition only
                 "background": "bg-17.jpg",
-                "text_link": "https://www.afrohealth.org.hk/contraception/accidental-pregnancy",
+                "text_link": "https://www.afrohealth.org.hk/safe-sex/pitfalls-of-condom-use",
 
             },
             {
@@ -1250,7 +1260,7 @@ var scenarios = [{
             },
             {
                 "order": 34,
-                "text": "客：哦，原來係咁嘅....",
+                "text": "哦，原來係咁嘅....",
                 "type": 0, //0:conversation, 1:transition, 2:popup action, 3: popup with next btn
                 "background": "bg-06.jpg",
                 "next": 35
