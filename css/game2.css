@@ -453,6 +453,7 @@ div#game_conversation_top img {
     right: 0;
     margin: 0 auto;
     bottom: 0;
+    
 }
 
 #replay_btn {
@@ -481,4 +482,5 @@ div#game_conversation_top img {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    cursor:pointer;
 }

@@ -492,8 +492,8 @@ var scenarios = [{
         "transition_next": -1, // for transition only
         "background": "bg-22.jpg",
         "popupImage": [22, 23, 24, 25, 26, 27],
-        "fadeOut": 1
-        //"text_link": "https://www.elegislation.gov.hk/hk/cap200!zh-Hant-HK",
+        "fadeOut": 1,
+        "lastImgLink": "https://www.elegislation.gov.hk/hk/cap200!zh-Hant-HK"
 
     },
     {
@@ -1217,7 +1217,7 @@ var scenarios = [{
         "type": 1, //0:conversation, 1:transition
         "transition_next": -1, // for transition only
         "background": "bg-17.jpg",
-        //"text_link": "https://www.elegislation.gov.hk/hk/cap200!zh-Hant-HK",
+        "lastImgLink": "https://www.elegislation.gov.hk/hk/cap200!zh-Hant-HK",
         "fadeOut": 1,
         "popupImage": [22, 23, 24, 25, 26, 27]
 
@@ -1435,7 +1435,7 @@ $(function () {
     $("#start_btn").click(function () {
         $("#start_screen").hide();
         //showIntro();
-        updateScenario(0, 0);
+        updateScenario(2,23);
     })
 
 
@@ -1655,6 +1655,12 @@ function updateScenario(scenario, stage) {
                                             setTimeout(function () {
                                                 image.remove();
                                                 if ($(".popupImage").length == 1) {
+                                                    if(stageObj.lastImgLink){
+                                                        $(".popupImage").css("cursor","pointer");
+                                                        $(".popupImage").click(function(){
+                                                            window.location.href = stageObj.lastImgLink
+                                                        })
+                                                    }   
                                                     $("#popup_next_btn").removeClass("fadedIn");
 
                                                     $("#replay_btn").show();
