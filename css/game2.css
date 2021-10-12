@@ -306,10 +306,17 @@ div#game_conversation_top img {
     display: flex;
     align-items: center;
     overflow-x: auto;
-    //justify-content: center;
 }
 #game_conversation_choices::-webkit-scrollbar {
     width: 12px;
+}   
+#game_conversation_choices::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+   
+#game_conversation_choices::-webkit-scrollbar-thumb {
+    background-color: #6E35A3;
+    outline: 1px solid #6E35A3;
 }
 
 #game_conversation_input {
