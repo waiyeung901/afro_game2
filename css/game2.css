@@ -308,6 +308,9 @@ div#game_conversation_top img {
     overflow-x: auto;
     //justify-content: center;
 }
+#game_conversation_choices::-webkit-scrollbar {
+    width: 12px;
+}
 
 #game_conversation_input {
     width: 100%;
