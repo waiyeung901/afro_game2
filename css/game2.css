@@ -329,6 +329,11 @@ div#game_conversation_top img {
     border-radius: 10px;
     background-color: #ffffff;
 }
+::-webkit-scrollbar,
+::-webkit-scrollbar-track {
+  display: block !important;
+}
+
 
 #game_conversation_input {
     width: 100%;
