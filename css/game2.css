@@ -309,6 +309,7 @@ div#game_conversation_top img {
 }
 ::-webkit-scrollbar {
     -webkit-appearance: none;
+    width:12px;
 }
 
 ::-webkit-scrollbar:vertical {
