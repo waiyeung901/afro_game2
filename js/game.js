@@ -1455,7 +1455,7 @@ function adjustAnswersPosition() {
         $("#game_conversation_choices > div > div").css("justify-content", "inherit");
         $("#game_conversation_choices > div").css("margin-left", "20px");
         $("#game_conversation_choices > div").css("margin-right", "20px");
-        $(".choices").css("margin-right", "20px");
+        $(".choices").css("margin-right", "10px");
         $(".choices").css("margin-left", 0);
 
     }
